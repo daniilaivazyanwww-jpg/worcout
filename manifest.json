@@ -1,0 +1,18 @@
+{
+  "name": "Workout — спорт, языки, план",
+  "short_name": "Workout",
+  "description": "Тренировки с таймером и техникой, калории и вода, 50 языков, план дня и цели.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0A0A0F",
+  "theme_color": "#0A0A0F",
+  "lang": "ru",
+  "categories": ["health", "fitness", "education", "productivity"],
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
