@@ -42,13 +42,13 @@ body[data-ui=light] .fb-tile,body[data-ui=light] .fb-search,body[data-ui=light] 
 </style></head><body>
 <title>Workout</title>
 <link rel="manifest" href="manifest.json">
-<link rel="icon" href="icon-192.png">
-<link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="Workout">
-<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="Workout">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
 <style>
-@font-face{font-family:'Manrope';font-style:normal;font-display:swap;font-weight:200 800;src:url(manrope-cyrillic-wght-normal.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
-@font-face{font-family:'Manrope';font-style:normal;font-display:swap;font-weight:200 800;src:url(manrope-latin-ext-wght-normal.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
-@font-face{font-family:'Manrope';font-style:normal;font-display:swap;font-weight:200 800;src:url(manrope-latin-wght-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Manrope';font-style:normal;font-display:swap;font-weight:200 800;src:url(fonts/manrope-cyrillic-wght-normal.woff2) format('woff2');unicode-range:U+0301,U+0400-045F,U+0490-0491,U+04B0-04B1,U+2116}
+@font-face{font-family:'Manrope';font-style:normal;font-display:swap;font-weight:200 800;src:url(fonts/manrope-latin-ext-wght-normal.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Manrope';font-style:normal;font-display:swap;font-weight:200 800;src:url(fonts/manrope-latin-wght-normal.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+0304,U+0308,U+0329,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
 :root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
 body{margin:0;-webkit-user-select:none;user-select:none;overscroll-behavior-y:none}
 input,textarea{-webkit-user-select:text;user-select:text}
@@ -2519,8 +2519,8 @@ body.m-nan .buddy .bd-in{animation:none!important}
 .hx-w{background:linear-gradient(160deg,#2A2A30,#0A0A0A)!important;color:#fff;border-color:rgba(255,255,255,.1);box-shadow:inset 0 1px 0 rgba(255,255,255,.16),0 20px 40px rgba(0,0,0,.35)}
 .hx-w .hx-i{background:rgba(255,255,255,.1);border-color:rgba(255,255,255,.14);color:#fff}
 .hx-w .hx-e,.hx-w .hx-b span{color:#9B9BA3}
-.hx-pill{display:inline-flex;align-items:center;gap:6px;margin-top:12px;height:32px;padding:0 14px;border-radius:16px;background:rgba(255,255,255,.1);font-size:13px;font-weight:700}
-.hx-pill span:last-child{color:#B4B4BC}
+.hx-pill{display:inline-flex;align-items:center;gap:6px;margin-top:12px;height:34px;padding:0 16px;border-radius:17px;background:rgba(255,255,255,.1);font-size:14px;font-weight:700;color:#fff}
+.hx-pill span:last-child{color:#D0D0D6}
 .hx-cta{margin-top:16px;width:100%;height:58px;border-radius:29px;background:#fff;color:#0A0A0A;display:flex;align-items:center;justify-content:space-between;padding:0 9px 0 26px;font-weight:800;font-size:16px;box-shadow:0 14px 34px rgba(255,255,255,.12)}
 .hx-w .hx-go{background:#0A0A0A;color:#fff;width:40px;height:40px}
 .hx-adj{display:inline-flex;gap:4px;padding:4px;border-radius:20px;background:var(--s2);border:1px solid var(--line)}
@@ -10139,7 +10139,7 @@ function rHome(){
     <div class="st">
       <div class="card hx hx-w"><div class="hx-h">${HXI('<path d="M6.5 6.5v11M17.5 6.5v11M3 9v6M21 9v6M6.5 12h11"/>')}<span class="hx-e">${T('ТРЕНИРОВКИ','WORKOUTS')}</span></div>
         <div class="hx-b"><b>${cu(wk)}</b><span>${T('за 7 дней','in 7 days')}</span></div>
-        <div class="hx-pill"><span class="flame">🔥</span><b>${streak}</b><span>${T('дн. подряд','day streak')}</span></div>
+        <div class="hx-pill"><b>${streak}</b><span>${T('дн. подряд','day streak')}</span></div>
         <div class="ls-wk">${(()=>{const tk=dk(),wdi=(new Date().getDay()+6)%7,mon=addD(tk,-wdi),ws=new Set(S.workouts.map(w=>w.date)),DN=[['Пн','Mo'],['Вт','Tu'],['Ср','We'],['Чт','Th'],['Пт','Fr'],['Сб','Sa'],['Вс','Su']],ck='<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-10"/></svg>';return DN.map((x,k)=>{const key=addD(mon,k),dn=ws.has(key);return `<div class="d${dn?' dn':''}${key===tk?' td':''}"><i>${dn?ck:''}</i>${T(x[0],x[1])}</div>`}).join('')})()}</div>
         <button class="hx-cta rp" data-act="quickWorkout"><span>${T('Начать','Start')}</span>${HXA}</button></div>
     </div>
@@ -10731,11 +10731,12 @@ function foodSheet(){
     <div class="row" style="gap:6px;flex-wrap:wrap;margin-top:16px">${FB_M.map(m=>`<button class="btn sm ${(FP.meal||mealAuto())===m[0]?'':'ghost '}rp" data-act="fpMeal" data-v="${m[0]}" aria-pressed="${(FP.meal||mealAuto())===m[0]}">${T(m[1],m[2])}</button>`).join('')}</div>
     <button class="btn full rp" style="margin-top:18px" data-act="foodAdd">${T('Добавить в дневник','Add to diary')}</button>`;
   }
-  return `<div class="grab"></div><h2 class="h2" style="margin-bottom:4px">${T('Что ты съел?','What did you eat?')}</h2><p class="sm mut" style="margin-bottom:10px">${T('Напиши название: калории и БЖУ посчитаются сами. В базе более 6500 продуктов.','Type a name: calories and macros are calculated. 6,500+ foods.')}<br><span style="font-size:11px">${T('Данные о питательной ценности: USDA и TempoLife (tempolife.app), CC-BY-4.0.','Nutrition data: USDA and TempoLife (tempolife.app), CC-BY-4.0.')}</span></p>
-  <input id="fpQ" type="search" autofocus placeholder="${T('Например: гречка, куриная грудка, плов…','Search…')}" value="${esc(FP.q)}" data-in="fpQ">
-  <div id="fpList" style="margin-top:8px">${fpList(items)}</div>`;
+  return `<div style="position:sticky;top:-10px;z-index:2;background:var(--bg2);margin:-10px -2px 0;padding:10px 2px 10px"><div class="grab"></div><h2 class="h2" style="margin-bottom:2px">${T('Что ты съел?','What did you eat?')}</h2><p class="sm mut" style="margin-bottom:12px">${T('Выбери продукт — калории и БЖУ посчитаются сами','Pick a food — calories and macros are calculated for you')}</p>
+  <input id="fpQ" type="search" autofocus placeholder="${T('Поиск: гречка, курица, плов…','Search: buckwheat, chicken…')}" value="${esc(FP.q)}" data-in="fpQ"></div>
+  <div id="fpList">${fpList(items)}</div>
+  <p class="mut" style="font-size:11px;line-height:1.45;text-align:center;margin:14px 0 4px">${T('6500+ продуктов · данные USDA и TempoLife (tempolife.app), CC-BY-4.0','6,500+ foods · data by USDA and TempoLife (tempolife.app), CC-BY-4.0')}</p>`;
 }
-function fpList(items){return items.length?items.slice(0,60).map(f=>`<button class="li rp" style="width:100%;text-align:left;position:relative;overflow:hidden" data-act="foodSel" data-i="${f.i}"><span class="grow">${esc(f.n)}</span><span class="sm mut tn">${f.k} ${T('ккал/100г','kcal/100g')}</span></button>`).join(''):`<p class="sm mut" style="padding:14px 0">${T('Ничего не найдено','Nothing found')}</p>`}
+function fpList(items){return items.length?items.slice(0,60).map(f=>`<button class="li rp" style="width:100%;text-align:left;position:relative;overflow:hidden;gap:10px;padding:13px 2px" data-act="foodSel" data-i="${f.i}"><span class="grow" style="min-width:0"><span style="display:block;font-weight:700;font-size:16px">${esc(f.n)}</span><span class="mut tn" style="display:block;font-size:12px;margin-top:2px">${T('Б','P')} ${f.p} · ${T('Ж','F')} ${f.f} · ${T('У','C')} ${f.c}</span></span><span style="text-align:right;flex:none"><b class="tn" style="font-size:17px">${f.k}</b><span class="mut" style="display:block;font-size:11px">${T('ккал/100г','kcal/100g')}</span></span></button>`).join(''):`<p class="sm mut" style="padding:14px 0">${T('Ничего не найдено','Nothing found')}</p>`}
 function fpMacros(){const f=FP.sel,m=FP.g/100;return [['Белки','Protein',f.p],['Жиры','Fat',f.f],['Углеводы','Carbs',f.c]].map(x=>`<div class="card" style="padding:10px;box-shadow:none"><b class="tn">${(x[2]*m).toFixed(1)}</b><div class="mut">${T(x[0],x[1])}</div></div>`).join('')}
 
 /* ========= PLAN ========= */
@@ -11014,11 +11015,11 @@ function rSettings(){
     row2(P.bell,T('Напоминания о делах','Task reminders'),sw('remind'),T('Сигнал в начале дела и когда выходит срок','Alert at start and when time is up'))+
     row2(P.bell,T('Напоминать заранее, мин','Remind ahead, min'),opt('remindAhead',[[0,'0'],[5,'5'],[10,'10'],[15,'15']])))}
   ${sec('🔒',T('Приватность','Privacy'),
-    row2(P.chk,T('Галочки прочтения','Read receipts'),`<button class="sw ${!st.noRead?'on':''}" data-act="privSet" data-k="noRead" role="switch" aria-checked="${!st.noRead}"></button>`,T('Друг видит, что ты прочитал сообщение','Your friend sees when you read'))+
-    row2(P.dots,T('«Печатает…»','Typing indicator'),`<button class="sw ${!st.noTyping?'on':''}" data-act="privSet" data-k="noTyping" role="switch" aria-checked="${!st.noTyping}"></button>`,T('Друг видит, когда ты набираешь сообщение','Friends see when you are typing'))+
-    (window.WorkoutAndroid&&WorkoutAndroid.msgSet?row2(P.dots,T('Уведомления','Notifications'),`<button class="sw ${!st.noPush?'on':''}" data-act="privSet" data-k="noPush" role="switch" aria-checked="${!st.noPush}"></button>`,T('Сообщения, звонки и заявки, даже когда приложение закрыто','Messages, calls and requests even when the app is closed'))+
-    row2(P.lock,T('Скрывать текст в уведомлениях','Hide text in notifications'),`<button class="sw ${st.hidePush?'on':''}" data-act="privSet" data-k="hidePush" role="switch" aria-checked="${!!st.hidePush}"></button>`,T('Показывать только «Новое сообщение»','Show only “New message”')):'')+
-    row2(P.phone,T('Принимать звонки','Allow calls'),`<button class="sw ${!st.noCalls?'on':''}" data-act="privSet" data-k="noCalls" role="switch" aria-checked="${!st.noCalls}"></button>`,T('Если выключено, звонки друзей отклоняются','When off, friends\' calls are declined'))+
+    row2(P.chk,T('Галочки прочтения','Read receipts'),(LINTRES_DOWN?RPR():`<button class="sw ${!st.noRead?'on':''}" data-act="privSet" data-k="noRead" role="switch" aria-checked="${!st.noRead}"></button>`),T('Друг видит, что ты прочитал сообщение','Your friend sees when you read'))+
+    row2(P.dots,T('«Печатает…»','Typing indicator'),(LINTRES_DOWN?RPR():`<button class="sw ${!st.noTyping?'on':''}" data-act="privSet" data-k="noTyping" role="switch" aria-checked="${!st.noTyping}"></button>`),T('Друг видит, когда ты набираешь сообщение','Friends see when you are typing'))+
+    (window.WorkoutAndroid&&WorkoutAndroid.msgSet?row2(P.dots,T('Уведомления','Notifications'),(LINTRES_DOWN?RPR():`<button class="sw ${!st.noPush?'on':''}" data-act="privSet" data-k="noPush" role="switch" aria-checked="${!st.noPush}"></button>`),T('Сообщения, звонки и заявки, даже когда приложение закрыто','Messages, calls and requests even when the app is closed'))+
+    row2(P.lock,T('Скрывать текст в уведомлениях','Hide text in notifications'),(LINTRES_DOWN?RPR():`<button class="sw ${st.hidePush?'on':''}" data-act="privSet" data-k="hidePush" role="switch" aria-checked="${!!st.hidePush}"></button>`),T('Показывать только «Новое сообщение»','Show only “New message”')):'')+
+    row2(P.phone,T('Принимать звонки','Allow calls'),(LINTRES_DOWN?RPR():`<button class="sw ${!st.noCalls?'on':''}" data-act="privSet" data-k="noCalls" role="switch" aria-checked="${!st.noCalls}"></button>`),T('Если выключено, звонки друзей отклоняются','When off, friends\' calls are declined'))+
     row2(P.lock,T('Код-пароль','Passcode'),`<button class="sw ${st.pin?'on':''}" data-act="pinToggle" role="switch" aria-checked="${!!st.pin}"></button>`,T('Запрашивать код при входе в приложение','Ask for a code when opening the app'))+
     (st.pin?row2(P.key,T('Сменить код','Change passcode'),`<button class="btn ghost sm rp" data-act="pinChange">${T('Сменить','Change')}</button>`):''))}
   ${admOn()?sec('',T('Разработчик','Developer'),row2(P.user,T('Кто в приложении','Who is in the app'),`<button class="btn sm rp" data-act="admOpen">${T('Открыть','Open')}</button>`,T('Панель разработчика','Developer panel'))):''}
@@ -11775,7 +11776,7 @@ function rSteps(){
     <div class="bar hx-bar" style="margin-top:14px"><i style="--p:${pct.toFixed(3)}"></i></div>
     ${S.settings.hc?`<p class="sm mut" style="margin-top:8px">${T('Шаги из Health Connect. Обновляются сами, даже когда приложение закрыто.','Steps from Health Connect. Updated automatically, even when the app is closed.')}</p>`:stepNat?`<p class="sm mut" style="margin-top:8px">${T('Шаги считаются в фоне, даже когда экран выключен или приложение закрыто.','Steps are counted in the background, even with the screen off or the app closed.')}</p>`:stepOn?`<p class="sm mut" style="margin-top:8px">${T('Считаю, пока приложение открыто. Телефон держи в кармане или руке.','Counting while the app is open. Keep the phone in your pocket or hand.')}</p>`
       :`<button class="btn full sm rp" style="margin-top:12px" data-act="stepsOn">${HC()?T('Подключить Health Connect','Connect Health Connect'):T('Включить счёт шагов','Turn on step counting')}</button>`}
-    <p class="hx-kc">🔥 ≈${Math.round(n*0.04)} ${T('ккал от шагов','kcal from steps')} · ${T('съедено','eaten')} ${foodTotals(td).k} / ${S.settings.kcal}</p></div>`;
+    <p class="hx-kc">≈${Math.round(n*0.04)} ${T('ккал от шагов','kcal from steps')} · ${T('съедено','eaten')} ${foodTotals(td).k} / ${S.settings.kcal}</p></div>`;
 }
 // native notifications (Android): tasks + daily pet reminder, work even when the app is closed
 var nTimer=null;
@@ -11923,6 +11924,7 @@ function copyTxt(t){
   try{navigator.clipboard.writeText(t).then(ok).catch(fb)}catch(e){fb()}
 }
 var RLE='',RLB=0;const LINTRES_DOWN=true;
+function RPR(){return '<span style="display:inline-flex;align-items:center;height:30px;padding:0 12px;border-radius:15px;background:color-mix(in srgb,var(--a1) 14%,transparent);color:var(--a1);font-size:12px;font-weight:800;white-space:nowrap">🛠 '+T('На ремонте','Under repair')+'</span>'}
 function relayPost(topic,obj){if(LINTRES_DOWN)return Promise.resolve(false);return fetch(RELAY+topic,{method:'POST',body:JSON.stringify(obj)}).then(r=>{if(!r.ok){RLE='HTTP '+r.status;if(r.status===429)RLB=Date.now()+45000}return r.ok}).catch(e=>{RLE='network: '+(e&&e.message||'');return false})}
 function relayGet(topic,since){
   if(LINTRES_DOWN||Date.now()<RLB)return Promise.resolve([]);
@@ -14360,7 +14362,7 @@ const N=Math.round(Math.min(90,Math.max(50,W/5)));const fl=[];
 const mk=(top)=>({x:Math.random()*W,y:top?-10-Math.random()*H*.2:Math.random()*H,k:Math.random()<.5?0:Math.random()<.6?1:2,v:.5+Math.random()*1.1,p:Math.random()*6.3,s:.4+Math.random()*.8});
 for(let i=0;i<N;i++)fl.push(mk(0));
 const CW=4;let hm=[],hx0=0,hn=0,HMAX=22,nz=[],lastR=null,pk=[];
-function nav(){const n=document.getElementById('nav');if(!n)return null;const L=document.getElementById('layer');if(L&&L.classList.contains('on'))return null;const r=n.getBoundingClientRect();if(r.width<50||r.height<20)return null;return r}
+function nav(){const n=document.getElementById('nav');if(!n)return null;const L=document.getElementById('layer');if(L&&L.classList.contains('on'))return null;const sh=document.getElementById('sheet'),sc=document.getElementById('scrim');if((sh&&sh.classList.contains('on'))||(sc&&sc.classList.contains('on')))return null;const r=n.getBoundingClientRect();if(r.width<50||r.height<20)return null;return r}
 let t=0,last=0,smoothT=0;
 function frame(ts){requestAnimationFrame(frame);if(document.hidden)return;const on=(typeof snowOn==='function')?snowOn():true;if(!on){if(cv.style.display!=='none'){cv.style.display='none';cx.setTransform(1,0,0,1,0,0);cx.clearRect(0,0,cv.width,cv.height)}last=ts;return}if(cv.style.display==='none')cv.style.display='';const dt=Math.min(2,(ts-last)/16.7||1);last=ts;t+=dt*.02;
 cx.setTransform(dpr,0,0,dpr,0,0);cx.clearRect(0,0,W,H);
