@@ -1,5 +1,5 @@
 // Offline cache for the web (PWA) version. The Android app loads files locally and does not use this.
-const CACHE = 'workout-v1.3';
+const CACHE = 'workout-v1.4';
 const FILES = [
   './', './index.html', './manifest.json',
   './icons/icon-192.png', './icons/icon-512.png', './icons/maskable-512.png',

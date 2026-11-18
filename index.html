@@ -1666,7 +1666,7 @@ body[data-ui=light] .mm-lw .mm-list button{color:#0A0A0A}body[data-ui=light] .mm
 .lx-lrow:active,.lx-trow:active,.lx-tool:active{transform:scale(.97)}
 .lx-lg{width:48px;height:48px;border-radius:16px;display:grid;place-items:center;font-size:18px;font-weight:800;background:var(--s2);border:1px solid var(--line)}
 .lx-lrow.cur{border-color:color-mix(in srgb,var(--fg) 45%,transparent)}
-.lx-lrow.cur .lx-lg{background:var(--fg);color:var(--bg)}
+.lx-lrow.cur .lx-lg{background:var(--fg);color:var(--bg)}.lx-lg.fl{font-size:28px;font-weight:400;line-height:1;background:var(--s2)!important;color:inherit!important}
 .lx-lt{min-width:0;display:flex;flex-direction:column}
 .lx-lt b{font-size:16px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .lx-lt small{font-size:12px;font-weight:700;color:var(--mut);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
@@ -1766,6 +1766,7 @@ body[data-ui=light] .mm-lw .mm-list button{color:#0A0A0A}body[data-ui=light] .mm
 .lx-dr.fl{animation:lxfl 1.8s ease-out}
 @keyframes lxfl{0%,45%{box-shadow:0 0 0 7px color-mix(in srgb,var(--fg) 30%,transparent)}100%{box-shadow:0 0 0 0 transparent}}
 .lx-fab{position:fixed;left:50%;transform:translateX(-50%);bottom:calc(80px + env(safe-area-inset-bottom,0px));z-index:31;display:flex;gap:6px;padding:6px;border-radius:999px;background:var(--navbg);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid var(--line);box-shadow:0 14px 40px rgba(0,0,0,.3);width:max-content;max-width:calc(100% - 24px)}
+.lx-top{position:fixed;right:16px;bottom:calc(148px + env(safe-area-inset-bottom,0px));z-index:31;width:50px;height:50px;border-radius:50%;display:grid;place-items:center;background:var(--navbg);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);border:1px solid var(--line);color:var(--fg);box-shadow:0 8px 24px rgba(0,0,0,.2);opacity:0;pointer-events:none;transform:scale(.8);transition:opacity .18s,transform .18s}.lx-top.on{opacity:1;pointer-events:auto;transform:none}
 .lx-fab .btn{height:44px;padding:0 16px;font-size:13.5px;flex:none}
 @media (prefers-reduced-motion:reduce){.lx-shine::before,.lx-day.td i,.lx-sn.c::after,.lx-lvb.now .tr,.lx-lvb .tr i,.lx-ring .f,.lx-mr .f,.lx-bar i{animation:none}}
 /* ===== chats: messenger list + stories ===== */
@@ -2754,7 +2755,7 @@ const RM_SYS=!!(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)'
 const CHECK='<svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
 
 /* ========= data ========= */
-const LS='workout_app_v1',APP_VER='4.07';
+const LS='workout_app_v1',APP_VER='4.08';
 function def(){return{
   onboarded:false,name:'',avatar:'',weight:70,
   settings:{theme:'light',accent:'flame',lang:'ru',sound:true,vib:true,units:'kg',kcal:2200,rest:60,remind:false,
@@ -9893,9 +9894,9 @@ function lgListHTML(){
   const q=LG.q.trim().toLowerCase(),cur=lgS().cur;
   const m=d=>!q||d[1].toLowerCase().includes(q)||d[2].toLowerCase().includes(q)||(LXN[d[0]]||'').toLowerCase().includes(q);
   const row=d=>{const c=d[0];
-    if(LGDIS.has(c))return `<div class="lx-lrow off"><span class="lx-lg">${lxG(c)}</span><span class="lx-lt"><b dir="auto">${esc(lxNat(d))}</b><small>${esc(lgNm(d))} · ${T('временно недоступен','temporarily unavailable')}</small></span><span class="lx-lp">${LXI.lock}</span></div>`;
+    if(LGDIS.has(c))return `<div class="lx-lrow off"><span class="lx-lg${d[3]?' fl':''}">${d[3]||lxG(c)}</span><span class="lx-lt"><b dir="auto">${esc(lxNat(d))}</b><small>${esc(lgNm(d))} · ${T('временно недоступен','temporarily unavailable')}</small></span><span class="lx-lp">${LXI.lock}</span></div>`;
     const dn=lgCsDone(c),pc=dn?Math.max(1,Math.round(dn/lgCsN(c)*100)):0;
-    return `<button class="lx-lrow${c===cur?' cur':''}" data-act="lgOpen" data-c="${c}"><span class="lx-lg">${lxG(c)}</span><span class="lx-lt"><b dir="auto">${esc(lxNat(d))}</b><small>${esc(lgNm(d))} · ${fmtN(d[6].length)} ${T('слов','words')}</small></span>${pc?`<span class="lx-lp"><b>${pc}%</b><span class="lx-bar"><i style="width:${pc}%"></i></span></span>`:`<span class="lx-new">${T('Начать','Start')}</span>`}</button>`};
+    return `<button class="lx-lrow${c===cur?' cur':''}" data-act="lgOpen" data-c="${c}"><span class="lx-lg${d[3]?' fl':''}">${d[3]||lxG(c)}</span><span class="lx-lt"><b dir="auto">${esc(lxNat(d))}</b><small>${esc(lgNm(d))} · ${fmtN(d[6].length)} ${T('слов','words')}</small></span>${pc?`<span class="lx-lp"><b>${pc}%</b><span class="lx-bar"><i style="width:${pc}%"></i></span></span>`:`<span class="lx-new">${T('Начать','Start')}</span>`}</button>`};
   const grp=(t,arr)=>arr.length?`<div class="lx-gh"><div class="lx-eb">${t}</div><span>${arr.length}</span></div><div class="lx-list">${arr.map(row).join('')}</div>`:'';
   const A=LGX().filter(m),on=d=>!LGDIS.has(d[0]);let h='';
   if(LG.reg!=='a')h+=grp(T('Европа','Europe'),A.filter(d=>d[5]!=='a'&&on(d)));
@@ -9971,7 +9972,7 @@ function lgDict(){
   ${d[12]?`<div class="lx-chips st">${LXPF.map(f=>`<button class="${X.ps===f[0]?'on':''}" data-act="lxDP" data-v="${f[0]}">${T(f[1],f[2])}</button>`).join('')}</div>`:''}
   <div class="lx-dst"><span id="lxDC"></span><span>${T('выучено','learned')} ${fmtN(kn)} · ${T('ты на слове','you are at')} ${fmtN(P.wi+1)}</span></div>
   <div class="lx-vin" id="lxVin"></div>
-  <div class="lx-fab"><button class="btn" data-act="lxDJ">${T('Где я остановился','Where I stopped')}</button><button class="btn ghost" data-act="lgEx" data-k="cs" data-step="${P.nx}">${T('Учить отсюда','Learn from here')}</button></div>`;
+  <button class="lx-top rp" id="lxTop" data-act="lxTop" aria-label="${T('Наверх','To top')}"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button><div class="lx-fab"><button class="btn" data-act="lxDJ">${T('Где я остановился','Where I stopped')}</button><button class="btn ghost" data-act="lgEx" data-k="cs" data-step="${P.nx}">${T('Учить отсюда','Learn from here')}</button></div>`;
 }
 function lxDictFill(){const v=$('#lxVin');if(!v||LG.v!=='dict')return;const d=lgD(LG.c),c=d[0],X=LG.dx,p=lgS().p[c]||[],L=lxLevels(c),q=X.q.trim().toLowerCase(),R=X.l>=0&&L[X.l]?[L[X.l].a,L[X.l].b]:[0,d[6].length],o=[],PS=typeof d[12]==='string'?d[12]:'';
   const sv=LG.c;
@@ -9979,7 +9980,7 @@ function lxDictFill(){const v=$('#lxVin');if(!v||LG.v!=='dict')return;const d=lg
     if(q){let mn='';try{mn=String(lgW(i)||'')}catch(e){}if(!(String(d[6][i]).toLowerCase().includes(q)||mn.toLowerCase().includes(q)))continue}o.push(i)}
   LG.c=sv;LG.dIdx=o;v.style.height=Math.max(0,o.length*LXR-8)+'px';const dc=$('#lxDC');if(dc)dc.textContent=o.length?fmtN(o.length)+' '+T('в списке','in list'):T('Ничего не нашлось','Nothing found');
   lxKey='';lxDictRender();if(LG.dxJ){LG.dxJ=0;setTimeout(()=>ACT.lxDJ(),120)}}
-function lxDictRender(){const v=$('#lxVin');if(!v||LG.v!=='dict'||TAB!=='lang')return;const o=LG.dIdx||[],top=v.getBoundingClientRect().top,a=Math.max(0,Math.floor(-top/LXR)-8),b=Math.min(o.length,a+Math.ceil(innerHeight/LXR)+18),key=a+':'+b+':'+(LG.dxF|0)+':'+o.length;
+function lxDictRender(){const v=$('#lxVin');if(!v||LG.v!=='dict'||TAB!=='lang')return;{const tb=$('#lxTop');if(tb)tb.classList.toggle('on',scrollY>600)}const o=LG.dIdx||[],top=v.getBoundingClientRect().top,a=Math.max(0,Math.floor(-top/LXR)-8),b=Math.min(o.length,a+Math.ceil(innerHeight/LXR)+18),key=a+':'+b+':'+(LG.dxF|0)+':'+o.length;
   if(key===lxKey)return;lxKey=key;const d=lgD(LG.c),c=d[0],p=lgS().p[c]||[],L=lxLevels(c),wi=lxPos(c).wi,rom=lgRomOn(c)&&LGRUBY_LINE[c],PS=typeof d[12]==='string'?d[12]:'';let h='';
   for(let k=a;k<b;k++){const i=o[k],lv=p[i]||0,st=i===wi,w=d[6][i];
     h+=`<button class="lx-dr${st?' stop':''}${i===LG.dxF?' fl':''}" style="top:${k*LXR}px" data-act="lxDW" data-i="${i}"><span class="lx-dn">${i+1}<em>${L[lxLvAt(L,i)].l}</em></span><span class="lx-dw" dir="auto">${lgRuby(c,w)}</span><span class="lx-dm"><b>${esc(lxMean(c,i))}</b>${rom||PS?`<small>${PS&&PS[i]?`<span class="lx-ps">${lxPosL(PS[i])}</span>`:''}${rom?esc(lgRom(c,w)||''):''}</small>`:''}</span>${st?`<span class="lx-here">${T('Ты здесь','You are here')}</span>`:`<span class="lx-dot${lv>=2?' f':lv===1?' h':''}"></span>`}</button>`}
@@ -9988,6 +9989,7 @@ window.addEventListener('scroll',()=>{if(TAB==='lang'&&LG.v==='dict')requestAnim
 window.addEventListener('resize',()=>{lxKey='';if(TAB==='lang'&&LG.v==='dict')lxDictRender()});
 setTimeout(()=>Object.assign(ACT,{
   lxGo:el=>{const c=el.dataset.c;LG.c=c;lgS().cur=c;save();ACT.lgEx({dataset:{k:'cs',step:lxPos(c).nx}})},
+  lxTop:()=>{window.scrollTo(0,0);const tb=$('#lxTop');if(tb)tb.classList.remove('on')},
   lxDict:el=>{lgStop();const ds=(el&&el.dataset)||{};LG.dx={q:'',f:'all',l:ds.l!==undefined?+ds.l:-1};LG.dxJ=ds.j?1:0;LG.dxF=-1;LG.v='dict';render();window.scrollTo(0,0)},
   lxDF:el=>{LG.dx.f=el.dataset.v;render()},
   lxDP:el=>{LG.dx.ps=el.dataset.v;render()},
@@ -13821,6 +13823,8 @@ async function dirFill(q,ql,empty,EMP){
   const row=(u,nm)=>{const fr=o.friends.some(f=>f.user===u),rq=o.reqOut.some(r=>r.user===u);return `<div class="sr-r"><span class="mec-a" style="${avS(u)}">${avI(nm,u)}</span><span class="mec-t"><b>${esc(nm)}</b><small>@${esc(u)}${rq?' · '+T('заявка отправлена','request sent'):''}</small></span>${fr?`<button class="btn rp sr-add" data-act="chatOpen" data-u="${esc(u)}">${T('Написать','Message')}</button>`:rq?'':`<button class="btn rp sr-add" data-act="srAdd" data-u="${esc(u)}">${T('Добавить','Add')}</button>`}</div>`};
   const ul=us.filter(u=>!o.friends.some(f=>f.user===u.user)).map(u=>row(u.user,u.name));
   if(ul.length)h+=`<div class="sr-h">${T('Пользователи','People')}</div><div class="sr-c">${ul.join('')}</div>`;
+  const qn=ql.replace(/^@/,'');
+  if(!ul.length&&!cs.length&&validUser(qn)&&qn!==o.user&&!o.friends.some(f=>f.user===qn)){const rq=o.reqOut.some(r=>r.user===qn);h+=`<div class="sr-h">${T('По юзернейму','By username')}</div><div class="sr-c"><div class="sr-r"><span class="mec-a" style="${avS(qn)}">${avI(qn,qn)}</span><span class="mec-t"><b>@${esc(qn)}</b><small>${rq?T('заявка отправлена','request sent'):T('Нет в каталоге','Not in directory')}</small></span>${rq?'':`<button class="btn rp sr-add" data-act="srAdd" data-u="${esc(qn)}">${T('Заявка','Request')}</button>`}</div></div>`}
   el2.innerHTML=h||(empty?EMP:'');
 }
 
