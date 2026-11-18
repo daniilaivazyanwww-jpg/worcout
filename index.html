@@ -2632,6 +2632,80 @@ body.m-nan .buddy .bd-in{animation:none!important}
 .le-go{width:40px;height:40px;border-radius:50%;background:var(--bg);color:var(--fg);display:grid;place-items:center}
 .le-row{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .le-b{height:52px;border-radius:26px;background:var(--s2);border:1px solid var(--line);font-weight:800;font-size:15px}
+
+/* BM: flex children never shrink (photo strip bug) */
+.ch-list>*{flex-shrink:0}
+/* BM: mic lives inside the composer pill */
+.ch-field>.ib#chMic{width:40px;height:40px;margin:0 2px 0 0;flex:none}
+.ch-field>.ib#chMic svg{width:20px;height:20px}
+/* BM: chat options as one clean list */
+.co-grp{gap:0;background:var(--s2);border-radius:22px;overflow:hidden;border:1px solid var(--line)}
+.co-grp .co-it{border-radius:0;border:0;background:none;box-shadow:none;padding:12px 14px;border-bottom:1px solid var(--line)}
+.co-grp .co-it:last-child{border-bottom:0}
+.co-grp .co-ic{width:38px;height:38px;border:0;background:color-mix(in srgb,var(--fg) 8%,transparent)}
+.co-grp .co-ic svg{width:20px;height:20px}
+.co-grp .co-it.dn{border-color:var(--line)}
+/* BM: Lintres menu, own look instead of coloured squares */
+.mes .fr-tg.mes-menu{border-radius:26px;box-shadow:0 8px 24px rgba(20,20,40,.06)}
+.mes-mi i{background:color-mix(in srgb,var(--fg) 8%,transparent)!important;color:var(--fg)!important;border-radius:50%!important;width:44px!important;height:44px!important;border:1px solid var(--line)}
+.mes-mi i svg{stroke:var(--fg)!important;width:21px!important;height:21px!important}
+.mes-mi b{font-size:16px!important;font-weight:800!important}
+
+/* BN: chat header = separate floating buttons + name pill */
+.chat .ch-top{background:none!important;border:0!important;box-shadow:none!important;padding:0 !important;gap:8px!important}
+.chat .ch-top .ib{width:46px!important;height:46px!important;background:var(--bg2)!important;border:1px solid var(--line)!important;box-shadow:0 8px 20px rgba(20,20,40,.1)!important;flex:none}
+body[data-ui=dark] .chat .ch-top .ib{background:var(--cgd)!important;box-shadow:none!important}
+.chat .ch-top .ib.ch-call{background:var(--lmg)!important;color:var(--lmi)!important;border:0!important}
+.chat .ch-who{background:var(--bg2)!important;border:1px solid var(--line)!important;box-shadow:0 8px 20px rgba(20,20,40,.1)!important;padding:4px 16px 4px 4px!important;min-height:46px}
+body[data-ui=dark] .chat .ch-who{background:var(--cgd)!important;box-shadow:none!important}
+.sv-av{display:grid;place-items:center;width:100%;height:100%;border-radius:50%;background:var(--lmg);color:var(--lmi)}.sv-av svg{width:20px;height:20px}
+.sv-sr{padding:6px 2px 0}.sv-sr input{width:100%;height:44px;border-radius:22px;padding:0 16px}
+.sv-x{display:inline-grid;place-items:center;width:22px;height:22px;margin-left:8px;vertical-align:middle;background:none;border:0;color:inherit;opacity:.55}.sv-x svg{width:15px;height:15px}
+.nw-bar2{display:flex;align-items:center;justify-content:center;gap:12px;margin:8px 14px;padding:14px 22px;border-radius:999px;background:var(--lmg);color:var(--lmi);text-decoration:none;flex:none;box-shadow:0 10px 24px rgba(10,10,14,.2)}
+.nw-bar2 svg{width:22px;height:22px;flex:none}.nw-bar2 span{display:flex;flex-direction:column;line-height:1.2}.nw-bar2 b{font-size:16px;font-weight:800}.nw-bar2 small{font-size:12.5px;opacity:.7;font-weight:600}
+
+/* BO: grouped header buttons, uniform composer buttons */
+.chat .ch-top .ch-acts{display:flex;align-items:center;gap:2px;padding:3px;border-radius:999px;background:var(--bg2);border:1px solid var(--line);box-shadow:0 8px 20px rgba(20,20,40,.1);flex:none}
+body[data-ui=dark] .chat .ch-top .ch-acts{background:var(--cgd);box-shadow:none}
+.chat .ch-top .ch-acts .ib{width:42px!important;height:42px!important;background:transparent!important;border:0!important;box-shadow:none!important}
+.chat .ch-top .ch-acts .ib.ch-call{background:var(--lmg)!important;color:var(--lmi)!important}
+.chat .ch-field>.ib,.chat .ch-field>.ib#chMic,.chat .ch-field>.ib.ch-send{width:42px!important;height:42px!important;min-width:42px;border-radius:50%!important;background:var(--s2)!important;color:var(--fg)!important;border:1px solid var(--line)!important;box-shadow:none!important;margin:0!important;animation:none!important;flex:none}
+.chat .ch-field>.ib::after{display:none!important}
+.chat .ch-field>.ib svg{width:20px;height:20px}
+.chat .ch-field>.ib#chMic[data-k=s],.chat .ch-field>.ib.ch-send[data-act=cvSend]{background:var(--lmg)!important;color:var(--lmi)!important;border-color:transparent!important}
+
+/* BQ: smaller chat options and header pill */
+.co-hd{padding:0 4px 8px}.co-av{width:44px;height:44px}.co-av span{font-size:18px}.co-hd b{font-size:19px}.co-hd small{font-size:12px}
+.co-sec{font-size:10.5px;padding:8px 6px 5px}
+.co-grp .co-it{padding:7px 12px;gap:11px}
+.co-grp .co-ic{width:32px;height:32px}.co-grp .co-ic svg{width:17px;height:17px}
+.co-tx b{font-size:14px}.co-tx small{font-size:11.5px}
+.co-ch{width:14px;height:14px}
+.co-grp{border-radius:18px}
+.co-last{margin-top:8px}
+.co-grp .fx-sw{transform:scale(.85)}
+.chat .ch-who{min-height:0!important;padding:3px 14px 3px 3px!important;gap:9px!important}
+.chat .ch-top .cx-av,.chat .ch-top .cl-av{width:38px!important;height:38px!important}
+.chat .ch-top .cx-av b{font-size:16px}
+.chat .ch-who b[style]{font-size:15px!important}
+.chat .ch-who small{font-size:11.5px!important}
+.chat .ch-top .ib{width:40px!important;height:40px!important}
+.chat .ch-top .ch-acts .ib{width:38px!important;height:38px!important}
+.sv-av svg{width:17px;height:17px}
+
+/* BR: saved photo + support bar */
+.sv-im{display:block;max-width:100%;width:100%;border-radius:14px;margin:0 0 4px;object-fit:cover;max-height:340px}
+body[data-ui] .chat .ch-field .sv-ph{color:var(--fg)!important;background:transparent!important;border:0!important;box-shadow:none!important;backdrop-filter:none!important;width:38px;height:38px}
+button.sup-tg{border:0;font-family:inherit;cursor:pointer;width:100%}
+
+/* BS: photo button left, new look */
+body[data-ui] .chat .ch-field .sv-ph{order:-1;width:40px!important;height:40px!important;margin:0 8px 0 0!important;border-radius:50%!important;background:color-mix(in srgb,var(--fg) 9%,transparent)!important;border:0!important}
+body[data-ui] .chat .ch-field .sv-ph svg{width:21px;height:21px;stroke-width:1.9}
+body[data-ui] .chat .ch-field:has(.sv-ph){padding-left:7px!important}
+
+/* BW: saved message menu */
+.sv-pn{display:inline-grid;vertical-align:-2px;margin-right:5px}.sv-pn svg{width:13px;height:13px}
+.chat .ch-m[data-act=svMsg]{cursor:pointer}
 </style>
 <script>if(window.WorkoutAndroid)document.documentElement.classList.add('lite')</script>
 </head>
@@ -2680,7 +2754,7 @@ const RM_SYS=!!(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)'
 const CHECK='<svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
 
 /* ========= data ========= */
-const LS='workout_app_v1',APP_VER='4.05';
+const LS='workout_app_v1',APP_VER='4.06';
 function def(){return{
   onboarded:false,name:'',avatar:'',weight:70,
   settings:{theme:'light',accent:'flame',lang:'ru',sound:true,vib:true,units:'kg',kcal:2200,rest:60,remind:false,
@@ -9335,6 +9409,7 @@ function foodTotals(d){const l=S.food[d]||[];return l.reduce((a,x)=>({k:a.k+x.k,
 
 /* ========= feedback ========= */
 function vib(ms){if(S.settings.vib&&navigator.vibrate){try{navigator.vibrate(ms||10)}catch(e){}}}
+document.addEventListener('click',e=>{try{const t=e.target&&e.target.closest&&e.target.closest('button,[data-act],a,[role=button],label,.rp,.tab');if(t&&!t.disabled)vib(8)}catch(_){}},true);
 let AC=null;
 function beep(f,dur,n){
   if(!S.settings.sound)return;
@@ -9406,7 +9481,7 @@ function applyColors(){
 let SVSHEET=false;
 function silverSync(){try{const lo=document.getElementById('layer');if(document.body.style.overflow==='hidden'&&!(lo&&lo.classList.contains('on'))&&!document.getElementById('ob2'))document.body.style.overflow=''}catch(e){}document.body.classList.toggle('sv',S.settings.theme==='dark');document.body.dataset.ui=S.settings.themeMode==='amoled'&&S.settings.theme==='dark'?'amoled':S.settings.theme;document.documentElement.style.colorScheme=S.settings.theme==='light'?'light':'dark';applyColors()}
 function applyTheme(){
-  const st=S.settings;const tm=st.themeMode||st.theme||'light';st.themeMode=tm;const rs=tm==='auto'?(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):tm==='amoled'?'dark':tm;st.theme=rs==='dark'?'dark':'light';
+  const st=S.settings;let tm=st.themeMode||st.theme||'light';if(tm==='amoled')tm='dark';else if(tm==='auto')tm=(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light');st.themeMode=tm;const rs=tm==='auto'?(matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light'):tm==='amoled'?'dark':tm;st.theme=rs==='dark'?'dark':'light';
   const acc=ACCENTS.find(a=>a[0]===st.accent);if(!acc)st.accent='flame';
   document.body.dataset.ui=tm==='amoled'?'amoled':st.theme;document.body.dataset.acc=st.accent;
   document.documentElement.style.colorScheme=st.theme==='light'?'light':'dark';
@@ -10981,7 +11056,7 @@ function rSettings(){
     row2(P.dumb,T('Вес','Weight'),stp('weight',1,w,st.units==='kg'?T(' кг',' kg'):T(' фнт',' lb')))+
     row2(P.dumb,T('Единицы','Units'),opt('units',[['kg',T('кг','kg')],['lb',T('фунты','lb')]])))}
   ${sec('🎨',T('Внешний вид','Appearance'),
-    row2(P.theme,T('Тема','Theme'),opt('themeMode',[['light',T('Светлая','Light')],['dark',T('Тёмная','Dark')],['amoled','AMOLED'],['auto',T('Авто','Auto')]]),T('Авто — как в настройках телефона','Auto follows your phone'))+
+    row2(P.theme,T('Тема','Theme'),opt('themeMode',[['light',T('Светлая','Light')],['dark',T('Тёмная','Dark')],]))+
     row2(P.dumb,T('Стартовый экран','Start screen'),opt('startTab',[['home',T('Главная','Home')],['sport',T('Спорт','Sport')],['plan',T('План','Plan')],['chats',T('Чаты','Chats')],['profile',T('Профиль','Me')]]))+
     row2(P.spark,T('Конфетти','Confetti'),`<button class="sw ${st.confetti!==false?'on':''}" data-act="swDef" data-k="confetti" role="switch" aria-checked="${st.confetti!==false}"></button>`,T('Салют за достижения и цели','Celebrate goals and badges'))+
     (snowSeason()?row2(P.spark,T('Снег','Snow'),`<button class="sw ${st.snow!==false?'on':''}" data-act="swDef" data-k="snow" role="switch" aria-checked="${st.snow!==false}"></button>`,T('Снегопад и сугробы. Доступно до 1 февраля','Snowfall and snowdrifts. Available until February 1')):'')+
@@ -11417,6 +11492,8 @@ const ACT={
   tgCopy:()=>copyTxt(TG),
   invShare:()=>shareMsg(inviteText()),
   shareApp:()=>shareMsg(T('Качай спорт, языки и дисциплину в одном приложении Workout 🔥\nСкачать: '+TG,'Train, learn languages and build discipline in one app — Workout 🔥\nDownload: '+TG)),
+  openDev:()=>{try{if(window.WorkoutAndroid&&WorkoutAndroid.openUrl){WorkoutAndroid.openUrl(DEVTG);return}}catch(e){}window.open(DEVTG,'_blank')},
+  svPhoto:()=>{const f=$('#svFile');if(f)f.click()},
   openTg:()=>{try{if(window.WorkoutAndroid&&WorkoutAndroid.openUrl){WorkoutAndroid.openUrl(TG);return}}catch(e){}window.open(TG,'_blank')},
   invOk:el=>{const u=el.dataset.u;closeSheet();frSend(u)},
   copyFr:el=>copyTxt('@'+el.dataset.u),
@@ -11677,6 +11754,7 @@ document.addEventListener('input',e=>{
   if(e.target&&e.target.id==='chIn'){chMicSync();if(e.target.value.trim())tySend();return}
   if(e.target&&e.target.id==='clQ'){const q=e.target.value.trim().toLowerCase();document.querySelectorAll('.cx-row[data-n],.cl-row[data-n]').forEach(r=>{r.hidden=!!q&&r.dataset.n.indexOf(q)<0});clSearchUI(e.target.value);return}
   const k=e.target.dataset.in;if(!k)return;
+  if(k==='svQ'&&CV){CV.q=e.target.value.trim();cvPaint();return}
   if(k==='fpQ'){FP.q=e.target.value;$('#fpList').innerHTML=fpList(fpSearch(FP.q))}
   if(k==='fpG'){FP.g=+e.target.value;$('#fpG').textContent=FP.g+' '+T('г','g');$('#fpK').textContent=Math.round(FP.sel.k*FP.g/100);$('#fpM').innerHTML=fpMacros()}
   if(k==='name'){S.name=e.target.value.trim();save()}
@@ -11923,11 +12001,11 @@ function copyTxt(t){
   const fb=()=>{const ta=document.createElement('textarea');ta.value=t;ta.style.cssText='position:fixed;opacity:0;top:0';document.body.appendChild(ta);ta.select();try{document.execCommand('copy');ok()}catch(e){toast(t)}ta.remove()};
   try{navigator.clipboard.writeText(t).then(ok).catch(fb)}catch(e){fb()}
 }
-var RLE='',RLB=0;const LINTRES_DOWN=true;
+var RLE='',RLB=0;const LINTRES_DOWN=(()=>{try{return !JSON.parse(localStorage.getItem('workout_admin')||'null').s}catch(e){return true}})();
 function RPR(){return '<span style="display:inline-flex;align-items:center;height:30px;padding:0 12px;border-radius:15px;background:color-mix(in srgb,var(--a1) 14%,transparent);color:var(--a1);font-size:12px;font-weight:800;white-space:nowrap">🛠 '+T('На ремонте','Under repair')+'</span>'}
 function relayPost(topic,obj){if(LINTRES_DOWN)return Promise.resolve(false);return fetch(RELAY+topic,{method:'POST',body:JSON.stringify(obj)}).then(r=>{if(!r.ok){RLE='HTTP '+r.status;if(r.status===429)RLB=Date.now()+45000}return r.ok}).catch(e=>{RLE='network: '+(e&&e.message||'');return false})}
 function relayGet(topic,since){
-  if(LINTRES_DOWN||Date.now()<RLB)return Promise.resolve([]);
+  if((LINTRES_DOWN&&!(typeof ADM!=='undefined'&&topic===ADM.t))||Date.now()<RLB)return Promise.resolve([]);
   return fetch(RELAY+topic+'/json?poll=1&since='+encodeURIComponent(since)).then(r=>{if(r.status===429){RLB=Date.now()+45000;return ''}return r.ok?r.text():''}).then(t=>t.split('\n').filter(Boolean).map(l=>{try{return JSON.parse(l)}catch(e){return null}}).filter(m=>m&&m.event==='message').map(m=>{let d=null;try{d=JSON.parse(m.message)}catch(e){}return{id:m.id,time:m.time,data:d,att:m.attachment&&m.attachment.url}}).filter(m=>m.data&&typeof m.data==='object')).catch(()=>[]);
 }
 
@@ -12368,7 +12446,7 @@ function chatTime(ts){
 }
 
 /* ===== invite by link ===== */
-const TG='https://t.me/worcoutwww';
+let SVM=null;const TG='https://t.me/worcoutwww';const DEVTG='https://t.me/nnmqxeeswww';
 const INVITE_BASE='https://claude.ai/artifact/7FAqNjiFprLMYYy1MhTtF8';
 const invEnc=u=>u.replace(/_/g,'-u-').replace(/\./g,'-d-');
 const invDec=t=>t.replace(/-u-/g,'_').replace(/-d-/g,'.');
@@ -12466,7 +12544,6 @@ function friendHTML(u){
     <div class="fp-s"><i class="fr-dot ${a.on?'':'off'}"></i>${a.txt}</div></div>
   <div class="fp-acts">${fa('chatOpen',ic('chats'),[T('Чат','Chat')])}${fa('frCall',ic('phone'),[T('Звонок','Call'),'','a'])}${fa('frCall',ic('vcall'),[T('Видео','Video'),'','v'])}${fa('frTog',mmI(mu?CXI.bell:CXI.mute),[mu?T('Включить','Unmute'):T('Без звука','Mute')],'')}</div>
   <div class="fp-c"><button class="fp-r rp" data-act="copyFr" data-u="${esc(f.user)}"><b>@${esc(f.user)}</b><small>${T('Имя пользователя','Username')}</small></button><div class="fp-r"><b>${a.txt}</b><small>${T('Статус','Status')}</small></div>${l.bio?`<div class="fp-r"><b>${esc(l.bio)}</b><small>${T('О себе','Bio')}</small></div>`:''}${l.ph?`<div class="fp-r"><b>${esc(l.ph)}</b><small>${T('Телефон','Phone')}</small></div>`:''}${l.bd?`<div class="fp-r"><b>${esc(meBdFmt(l.bd))}</b><small>${T('День рождения','Birthday')}</small></div>`:''}</div>
-  <div class="fr-sec${pkOk(f.pk)?'':' warn'}" id="frSec">${mmI('<rect x="5" y="11" width="14" height="10" rx="3"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/>')}<div>${pkOk(f.pk)?`<b>${T('Шифрование включено','Encryption is on')}</b><small>${T('Код безопасности','Safety code')}: <em id="frSecCode">·····</em>. ${T('Если у друга такой же код, ключи никто не подменил.','If your friend sees the same code, nobody swapped the keys.')}</small>`:`<b>${T('Пока без шифрования','Not encrypted yet')}</b><small>${T('Друг на старой версии. Шифрование включится само, когда он обновит приложение.','Your friend is on an old version. Encryption turns on by itself once they update.')}</small>`}</div></div>
   <div class="pf-trio" style="margin-top:16px"><div><b>${l.streak!=null?+l.streak:'–'}</b><span>${T('дней подряд','day streak')}</span></div><div><b>${l.n!=null?+l.n:'–'}</b><span>${T('тренировки','workouts')}</span></div><div><b>${l.steps!=null?(+l.steps).toLocaleString(loc()):'–'}</b><span>${T('шагов сегодня','steps today')}</span></div></div>
   <div class="card pf-week" style="margin-top:12px"><div class="pf-cols">${bars}</div></div>
   <div class="fr-mh" id="frMedH" hidden>${T('Фото из чата','Photos from the chat')}</div><div class="fr-med" id="frMed" hidden></div>
@@ -12719,7 +12796,7 @@ document.addEventListener('click',e=>{if(Date.now()<chLP){e.stopPropagation();e.
 function chatHTML(u){
   const o=soc(),f=o.friends.find(x=>x.user===u);if(!f)return'';
   const a=frAgo(f);
-  return `<div class="lin chat"><div class="ch-top"><button class="ib rp" data-act="chatClose" aria-label="${T('Назад','Back')}">${ic('back')}</button><div class="ch-who" data-act="cxProf" data-u="${esc(u)}" role="button"><span class="cl-av${stFrList(u).length?' st" data-act="stOpen" data-u="'+esc(u)+'" role="button" aria-label="'+T('Смотреть историю','View story'):''}"><b>${esc((f.name||'?')[0].toUpperCase())}</b>${a.on?'<i class="cl-on"></i>':''}</span><div style="min-width:0;flex:1"><b style="display:block;font-size:17px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(f.name)}</b><small class="mut" style="font-size:12.5px;font-weight:600">${a.txt}</small></div></div><button class="ib rp" data-act="callVideo" aria-label="${T('Видеозвонок','Video call')}">${ic('vcall')}</button><button class="ib rp ch-call" data-act="callAudio" aria-label="${T('Позвонить','Call')}">${ic('phone')}</button><button class="ib rp" data-act="chatMenu" aria-label="${T('Ещё','More')}">${mmI('<circle cx="12" cy="5.5" r="1.7" fill="currentColor"/><circle cx="12" cy="12" r="1.7" fill="currentColor"/><circle cx="12" cy="18.5" r="1.7" fill="currentColor"/>')}</button></div>
+  return `<div class="lin chat"><div class="ch-top"><button class="ib rp" data-act="chatClose" aria-label="${T('Назад','Back')}">${ic('back')}</button><div class="ch-who" data-act="cxProf" data-u="${esc(u)}" role="button"><span class="cl-av${stFrList(u).length?' st" data-act="stOpen" data-u="'+esc(u)+'" role="button" aria-label="'+T('Смотреть историю','View story'):''}"><b>${esc((f.name||'?')[0].toUpperCase())}</b>${a.on?'<i class="cl-on"></i>':''}</span><div style="min-width:0;flex:1"><b style="display:block;font-size:17px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(f.name)}</b><small class="mut" style="font-size:12.5px;font-weight:600">${a.txt}</small></div></div><div class="ch-acts"><button class="ib rp" data-act="callVideo" aria-label="${T('Видеозвонок','Video call')}">${ic('vcall')}</button><button class="ib rp ch-call" data-act="callAudio" aria-label="${T('Позвонить','Call')}">${ic('phone')}</button><button class="ib rp" data-act="chatMenu" aria-label="${T('Ещё','More')}">${mmI('<circle cx="12" cy="5.5" r="1.7" fill="currentColor"/><circle cx="12" cy="12" r="1.7" fill="currentColor"/><circle cx="12" cy="18.5" r="1.7" fill="currentColor"/>')}</button></div></div>
   <div class="ch-pin" id="chPin" hidden></div>
   <div class="ch-list" id="chList">${chatMsgs(u)}</div>
   <div class="ch-stk" id="chStk" hidden><span class="stk-h">${T('Серебряная серия','Silver series')}</span>${STK.map(s=>`<button class="rp" data-act="chatStk" data-s="${s[0]}" aria-label="${s[0]}">${stkSvg(s[0],58)}</button>`).join('')}</div>
@@ -12729,7 +12806,7 @@ function chatHTML(u){
 }
 function chatBarHTML(){
   if(REC&&REC.kind==='aud')return `<button class="ib rp ch-del" data-act="recCancel" aria-label="${T('Удалить','Delete')}">${ic('trash')}</button><div class="ch-rec"><i class="ch-dot"></i><b id="recT">0:00</b><div class="ch-live">${'<i></i>'.repeat(18)}</div><span class="ch-hint"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg>${T('Отмена','Cancel')}</span></div><button class="ib rp ch-send" data-act="recSend" aria-label="${T('Отправить','Send')}">${ic('send')}</button>`;
-  return `<div class="ch-field"><button class="ib rp" data-act="chatAttach" aria-label="${T('Вложения','Attach')}">${ic('plus')}</button><textarea id="chIn" rows="1" data-enter="chatSend" placeholder="${T('Сообщение','Message')}" maxlength="600" autocomplete="off" enterkeyhint="send"></textarea><button class="ib rp" data-act="chatStkTog" aria-label="${T('Стикеры','Stickers')}">${ic('smile')}</button></div><button class="ib rp ch-send" data-act="chatMic" id="chMic" data-k="${(S.settings.chMode==='cir')?'cir':'aud'}" aria-label="${T('Голосовое или кружок','Voice or video circle')}">${S.settings.chMode==='cir'?mmI(ATI.cir):ic('mic')}</button>`;
+  return `<div class="ch-field"><button class="ib rp sv-ph" data-act="chatPhoto" aria-label="${T('Добавить фото','Add photo')}">${mmI('<rect x="3" y="5" width="18" height="14" rx="3"/><circle cx="9" cy="11" r="1.8"/><path d="M21 16l-5-5-8 8"/>')}</button><textarea id="chIn" rows="1" data-enter="chatSend" placeholder="${T('Сообщение','Message')}" maxlength="600" autocomplete="off" enterkeyhint="send"></textarea><button class="ib rp" data-act="chatStkTog" aria-label="${T('Стикеры','Stickers')}">${ic('smile')}</button><button class="ib rp ch-send" data-act="chatMic" id="chMic" data-k="${(S.settings.chMode==='cir')?'cir':'aud'}" aria-label="${T('Голосовое или кружок','Voice or video circle')}">${S.settings.chMode==='cir'?mmI(ATI.cir):ic('mic')}</button></div>`;
 }
 const CK1='<path d="M4 12.5l5 5L20 7"/>',CK2='<path d="M1.5 12.5l5 5L17 7M9 16.5l1 1L21 7"/>';
 const ckHTML=m=>(!m.me||m.st==='f'||m.st==='p')?'':`<i class="ck${m.rd?' rd':''}" aria-label="${m.rd?T('Прочитано','Read'):m.dv?T('Доставлено','Delivered'):T('Отправлено','Sent')}"><svg viewBox="0 0 22 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">${m.rd||m.dv?CK2:CK1}</svg></i>`;
@@ -12752,7 +12829,7 @@ function chatOptsHTML(){
   <div class="co-hd"><div class="co-av"><span>${av}</span></div><div><b class="gtext">${n}</b><small>${T('Управление чатом','Chat options')}</small></div></div>
   <div class="co-grp">
   ${(()=>{const o2=soc(),cf=stO().close.includes(chatU),tg=(k,p,a,b2,on)=>`<button class="co-it rp" data-act="chTog" data-k="${k}" aria-pressed="${on}"><i class="co-ic">${ti(p)}</i><span class="co-tx"><b>${a}</b><small>${b2}</small></span><i class="fx-sw${on?' on':''}"></i></button>`;
-    return tg('pin',CXI.pin,T('Закрепить чат','Pin chat'),T('Наверху списка чатов','At the top of the chat list'),o2.cpin.includes(chatU))+tg('mute',CXI.mute,T('Без звука','Mute'),T('Без уведомлений и звука','No notifications or sound'),o2.mute.includes(chatU))+tg('close',CXI.star,T('Близкий друг','Close friend'),T('Видит истории «для близких»','Sees close-friends stories'),cf)})()}
+    return tg('pin',CXI.pin,T('Закрепить чат','Pin chat'),T('Наверху списка чатов','At the top of the chat list'),o2.cpin.includes(chatU))+tg('mute',CXI.mute,T('Без звука','Mute'),T('Без уведомлений и звука','No notifications or sound'),o2.mute.includes(chatU))})()}
   </div>
   <div class="co-sec">${T('Только у тебя','Only you')}</div>
   <div class="co-grp">
@@ -12866,6 +12943,10 @@ function shrinkImg(file,max){
     im.onerror=()=>{URL.revokeObjectURL(url);rej()};im.src=url;
   });
 }
+document.addEventListener('change',e=>{
+  if(e.target.id!=='svFile')return;const f=(e.target.files||[])[0];e.target.value='';if(!f)return;
+  shrink(f,1100,u=>{const o=soc();o.saved.push({id:rndId(8),x:'',im:u,ts:Date.now()});save();if(CV&&CV.k==='saved')cvPaint(true)})
+});
 document.addEventListener('change',async e=>{
   if(e.target.id!=='chFile'&&e.target.id!=='chCam')return;
   const fs=[...(e.target.files||[])].slice(0,9);e.target.value='';if(!fs.length)return;
@@ -13183,7 +13264,7 @@ function stCardHTML(it){
 }
 
 /* --- sending: one encrypted copy per friend, retried until the story expires --- */
-function stAudience(it){const o=soc(),s=stO();return o.friends.filter(f=>pkOk(f.pk)&&(it.aud!=='close'||s.close.includes(f.user))).map(f=>f.user)}
+function stAudience(it){const o=soc(),s=stO();return o.friends.filter(f=>pkOk(f.pk)&&true).map(f=>f.user)}
 async function stSendOne(it,u){
   const o=soc(),f=o.friends.find(x=>x.user===u);if(!f||!pkOk(f.pk))return true;
   const base={t:'sty',id:it.id,k:it.k,bg:it.bg||0};if(it.x)base.x=it.x;if(it.d)base.d=it.d;
@@ -13314,7 +13395,7 @@ function stnOpen(k){
   if(STV)stvClose();closeSheet();
   const fr=soc().friends;
   STN={k:k||'t',bg:k==='w'?6:k==='f'?3:k==='l'?2:1,x:'',aud:'all',blob:null,url:'',pan:''};
-  if(STN.aud==='close'&&!stO().close.length)STN.aud='all';
+  STN.aud='all';
   let el=$('#stn');if(!el){el=document.createElement('div');el.id='stn';el.className='stn';el.setAttribute('role','dialog');el.setAttribute('aria-modal','true');el.setAttribute('aria-label',T('Новая история','New story'));document.body.appendChild(el)}
   stnPaint();el.classList.add('on');document.body.style.overflow='hidden';
   if(!fr.length)toast(T('Добавь друзей, чтобы они увидели историю','Add friends so they can see your story'));
@@ -13429,15 +13510,16 @@ function rChats0(){
   const fresh=CLT==='all'?rows.filter(r=>!r.l.length&&!pin(r)):[];
   const head=`<header class="top st"><div><div class="eyebrow">${T('Друзья','Friends')} · ${o.friends.length}</div><h1 class="h1" style="margin-top:4px">${T('Линтрес','Lintres')}</h1></div><div class="cx-hb"><button class="cx-hbtn rp" data-act="stNew" aria-label="${T('Новая история','New story')}">${mmI(CXI.cam)}</button><button class="cx-hbtn dk rp" data-act="friendAdd" aria-label="${T('Добавить друга','Add a friend')}">${mmI(CXI.uplus)}</button></div></header>`;
   const reqs=o.reqIn.length?`<div class="cx-sec">${T('Заявки в друзья','Friend requests')} · ${o.reqIn.length}</div><div class="cx-card">${o.reqIn.map(r=>`<div class="cx-req"><span class="cx-av"><b style="${avS(r.user)}">${avI(r.name,r.user)}</b></span><span class="cx-rt"><b>${esc(r.name)}</b><small>@${esc(r.user)} · ${r.nk?T('сменил ключ шифрования','changed the encryption key'):T('хочет дружить','wants to be friends')}</small></span><button class="cx-ok rp" data-act="reqOk" data-u="${esc(r.user)}">${T('Принять','Accept')}</button><button class="cx-no rp" data-act="reqNo" data-u="${esc(r.user)}" aria-label="${T('Отклонить','Decline')}">${mmI('<path d="M6 6l12 12M18 6 6 18"/>')}</button></div>`).join('')}</div>`:'';
+  const svO=soc().saved,svl=svO[svO.length-1],savedRow=`<div class="cx-row" data-n="${esc(T('избранное saved заметки','saved notes'))}"><button class="cx-av" data-act="savedOpen" aria-label="${T('Избранное','Saved messages')}"><b class="sv-av">${mmI('<path d="M6 3h12v18l-6-4-6 4z"/>')}</b></button><button class="cx-main" data-act="savedOpen"><span class="cx-l1"><b class="cx-n">${T('Избранное','Saved messages')}</b><small class="cx-t">${svl?chatTime(svl.ts):''}</small></span><span class="cx-l2"><span class="cx-p">${svl?esc(svl.x):T('Заметки только для тебя','Notes just for you')}</span><i class="cx-pin" aria-label="${T('Закреплён','Pinned')}">${mmI(CXI.pin)}</i></span></button></div>`;
   const sp=supO(),spl=sp.msgs[sp.msgs.length-1],supRow=`<div class="cx-row${sp.un?' un':''}" data-n="${esc(T('поддержка support помощь help','support help'))}"><button class="cx-av" data-act="supOpen" aria-label="${T('Поддержка','Support')}"><b class="sup-av">${mmI(CXI.help)}</b></button><button class="cx-main" data-act="supOpen"><span class="cx-l1"><b class="cx-n">${T('Поддержка Workout','Workout support')}</b><small class="cx-t">${spl?chatTime(spl.ts):''}</small></span><span class="cx-l2"><span class="cx-p">${spl?(spl.me?'<span class="cx-me">'+T('Вы:','You:')+'</span> ':'')+esc(spl.x):T('Задай вопрос про приложение','Ask a question about the app')}</span>${sp.un?`<em class="cx-b">${sp.un}</em>`:`<i class="cx-pin" aria-label="${T('Закреплён','Pinned')}">${mmI(CXI.pin)}</i>`}</span></button></div>`;
   const nw=newsO(),nl=nw.msgs[nw.msgs.length-1],newsRow=`<div class="cx-row${nw.un?' un':''}" data-n="workout news новости канал обновления"><button class="cx-av" data-act="newsOpen" aria-label="Workout"><b class="nw-av">W</b></button><button class="cx-main" data-act="newsOpen"><span class="cx-l1"><b class="cx-n">Workout</b><i class="nw-ok" aria-label="${T('Официальный','Official')}">${mmI(CXI.ck)}</i><small class="cx-t">${nl?chatTime(nl.ts):''}</small></span><span class="cx-l2"><span class="cx-p">${nl?esc(nl.title||nl.x):''}</span>${nw.un?`<em class="cx-b">${nw.un}</em>`:`<i class="cx-pin">${mmI(CXI.pin)}</i>`}</span></button></div>`;
   const grAll=Object.values(grO()),grRow=g=>{const l=g.msgs[g.msgs.length-1],by=l&&!l.sys&&g.k==='g'?(l.by===o.user?T('Вы','You'):frName(l.by))+': ':'';return `<div class="cx-row${g.un?' un':''}" data-n="${esc(g.n.toLowerCase())}"><button class="cx-av" data-act="grOpen" data-id="${esc(g.id)}" aria-label="${esc(g.n)}"><b class="gr-av ${g.k}">${mmI(g.k==='c'?CXI.chan:CXI.group)}</b></button><button class="cx-main" data-act="grOpen" data-id="${esc(g.id)}"><span class="cx-l1"><b class="cx-n">${esc(g.n)}</b>${g.mu?`<i class="cx-mu">${mmI(CXI.mute)}</i>`:''}<small class="cx-t">${l?chatTime(l.ts):''}</small></span><span class="cx-l2"><span class="cx-p">${l?esc(by+l.x):''}</span>${g.un?`<em class="cx-b${g.mu?' mu':''}">${Math.min(g.un,99)}</em>`:''}</span></button></div>`};
-  if(!o.friends.length)return head+`<div class="st cx">${cxNav()}<label class="cl-s"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input id="clQ" type="search" placeholder="${T('Поиск','Search')}" autocomplete="off" autocapitalize="none" aria-label="${T('Поиск','Search')}"></label><div id="clRes" class="sr" hidden></div>${reqs}<div class="cx-card">${newsRow}${supRow}${grAll.sort((a,b)=>b.ts-a.ts).map(grRow).join('')}</div>${o.reqIn.length?'':`<div class="cl-empty"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="46" height="46">${IC.chats}</svg><b>${T('Пока нет чатов','No chats yet')}</b><p>${T('Добавь друга по юзернейму: появятся переписка, истории, звонки, фото, голосовые и кружки.','Add a friend by username to get chats, stories, calls, photos, voice and video circles.')}</p><button class="btn rp" data-act="friendAdd">${T('Добавить друга','Add a friend')}</button></div>`}</div>`;
+  if(!o.friends.length)return head+`<div class="st cx">${cxNav()}<label class="cl-s"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input id="clQ" type="search" placeholder="${T('Поиск','Search')}" autocomplete="off" autocapitalize="none" aria-label="${T('Поиск','Search')}"></label><div id="clRes" class="sr" hidden></div>${reqs}<div class="cx-card">${savedRow}${newsRow}${supRow}${grAll.sort((a,b)=>b.ts-a.ts).map(grRow).join('')}</div>${o.reqIn.length?'':`<div class="cl-empty"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="46" height="46">${IC.chats}</svg><b>${T('Пока нет чатов','No chats yet')}</b><p>${T('Добавь друга по юзернейму: появятся переписка, истории, звонки, фото, голосовые и кружки.','Add a friend by username to get chats, stories, calls, photos, voice and video circles.')}</p><button class="btn rp" data-act="friendAdd">${T('Добавить друга','Add a friend')}</button></div>`}</div>`;
   const su=stRowUsers(),hasMine=s.mine.length>0;
   const strow=`<div class="cx-st" role="list" aria-label="${T('Истории','Stories')}"><div class="cx-s" role="listitem"><button class="cx-ring me${hasMine?'':' none'}" data-act="${hasMine?'stMine':'stNew'}" aria-label="${hasMine?T('Моя история','My story'):T('Новая история','New story')}">${S.avatar?`<img src="${esc(S.avatar)}" alt="">`:`<b style="background:var(--lmg);color:var(--lmi)">${avI(S.name,o.user)}</b>`}</button><button class="cx-plus" data-act="stNew" aria-label="${T('Добавить историю','Add a story')}">${mmI(CXI.plus)}</button><span>${T('Моя','You')}</span></div>${su.map(u=>{const f=o.friends.find(x=>x.user===u),un=stUnseen(u);return `<button class="cx-s" role="listitem" data-act="stOpen" data-u="${esc(u)}" aria-label="${T('История: ','Story: ')}${esc(f.name)}"><span class="cx-ring${un?'':' seen'}"><b style="${avS(u)}">${avI(f.name,u)}</b></span><span class="${un?'':'mut'}">${esc(String(f.name||u).split(' ')[0])}</span></button>`}).join('')}${su.length?'':`<button class="cx-s cx-tip" data-act="stNew"><span>${T('Здесь появятся истории друзей. Опубликуй свою первым','Friends’ stories show up here. Post yours first')}</span></button>`}</div>`;
   const tabs=`<div class="cx-tabs${o.folders.length?' many':''}" role="tablist">${[['all',T('Все','All'),0],['un',T('Новые','Unread'),nUn],['on',T('В сети','Online'),nOn],['gr',T('Группы','Groups'),grAll.length]].concat(o.folders.map(f=>['f:'+f.id,esc(f.n),0])).map(t=>`<button role="tab" aria-selected="${CLT===t[0]}" class="${CLT===t[0]?'on':''}" data-act="clTab" data-k="${t[0]}">${t[1]}${t[2]?`<em>${t[2]}</em>`:''}</button>`).join('')}</div>`;
   const items=list.map(r=>({pin:pin(r),ts:r.m?r.m.ts:0,html:cxRow(r,o,s)})).concat((fo?grAll.filter(g=>fo.items.includes('g:'+g.id)):CLT==='all'||CLT==='gr'||CLT==='un'?grAll.filter(g=>CLT!=='un'||g.un>0):[]).map(g=>({pin:0,ts:g.ts||0,html:grRow(g)}))).sort((a,b)=>(b.pin-a.pin)||(b.ts-a.ts));
-  const body=(CLT==='all'||items.length)?`<div class="cx-card">${CLT==='all'?newsRow+supRow:''}${items.map(x=>x.html).join('')}</div>`:`<div class="cx-none">${CLT==='un'?T('Все сообщения прочитаны','All caught up'):fo?T('В этой папке пока нет чатов','No chats in this folder yet'):CLT==='gr'?T('Групп и каналов пока нет. Создай их в настройках мессенджера','No groups or channels yet. Create one in messenger settings'):T('Сейчас никого нет в сети','Nobody is online right now')}</div>`;
+  const body=(CLT==='all'||items.length)?`<div class="cx-card">${CLT==='all'?savedRow+newsRow+supRow:''}${items.map(x=>x.html).join('')}</div>`:`<div class="cx-none">${CLT==='un'?T('Все сообщения прочитаны','All caught up'):fo?T('В этой папке пока нет чатов','No chats in this folder yet'):CLT==='gr'?T('Групп и каналов пока нет. Создай их в настройках мессенджера','No groups or channels yet. Create one in messenger settings'):T('Сейчас никого нет в сети','Nobody is online right now')}</div>`;
   const freshH=fresh.length?`<div class="cx-sec">${T('Начать переписку','Start a chat')}</div><div class="cx-card">${fresh.map(r=>cxRow(r,o,s)).join('')}</div>`:'';
   return head+`<div class="st cx">${cxNav()}<label class="cl-s"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5"/></svg><input id="clQ" type="search" placeholder="${T('Поиск','Search')}" autocomplete="off" autocapitalize="none" aria-label="${T('Поиск','Search')}"></label><div id="clRes" class="sr" hidden></div>${strow}${tabs}${reqs}${body}${freshH}<p class="cx-hint">${T('Удерживай чат, чтобы закрепить его или выключить звук','Hold a chat to pin or mute it')}</p></div>`;
 }
@@ -13508,7 +13590,7 @@ function mesHTML(){
   <div class="fp-top"><div class="mes-ph"><button class="fp-av mep-av rp" data-act="mePhoto" aria-label="${T('Сменить фото','Change photo')}">${av}</button><i class="mes-cam">${mmI(CXI.cam)}</i></div><h2 class="fp-n">${esc(S.name||'')}</h2><div class="fp-s" style="margin-top:6px">${S.phone?esc(S.phone)+' · ':''}@${esc(o.user)}</div></div>
   <div class="fr-tg mes-menu" style="margin-bottom:14px">${mi('saved','#2F9BF5','<path d="M6 3h12v18l-6-4-6 4z"/>',T('Избранное','Saved messages'),o.saved.length?o.saved.length+' '+T('заметок','notes'):T('Заметки только для тебя','Notes just for you'))}${mi('calls','#34B759','<path d="M6.6 4h3l1.5 4-2 1.3a11 11 0 0 0 5.6 5.6l1.3-2 4 1.5v3a2 2 0 0 1-2 2A16 16 0 0 1 4.6 6a2 2 0 0 1 2-2z"/>',T('Недавние звонки','Recent calls'),T('История звонков','Call history'))}</div>
   <div class="fr-tg mes-menu">${mi('acc','#2F9BF5','<circle cx="12" cy="8" r="3.8"/><path d="M4.5 20c0-4 3.4-6.5 7.5-6.5s7.5 2.5 7.5 6.5"/>',T('Аккаунт','Account'),T('Телефон, юзернейм, «О себе»','Phone, username, about'))}${mi('chat','#F5A31A',CXI.chats||IC.chats,T('Настройки чатов','Chat settings'),T('Фон, размер текста, тема','Wallpaper, text size, theme'))}${mi('priv','#34B759','<circle cx="8" cy="12" r="3.2"/><path d="M11 12h9M17 12v3M20 12v2"/>',T('Конфиденциальность','Privacy and security'),T('Звонки, галочки, шифрование','Calls, receipts, encryption'))}${mi('notif','#F0434F',CXI.bell,T('Уведомления','Notifications'),T('Звуки, вибрация, текст','Sounds, vibration, text'))}${mi('data','#3B6EF0','<path d="M12 3v9h9"/><path d="M20 14a8 8 0 1 1-10-10"/>',T('Данные и память','Data and storage'),T('Кэш и хранилище','Cache and storage'))}${mi('fold','#2AA9E8','<path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>',T('Папки с чатами','Chat folders'),soc().folders.length?soc().folders.length+' '+T('папок','folders'):T('Сортировка чатов по папкам','Sort chats into folders'))}${mi('dev','#1FB7C9','<rect x="7" y="3" width="10" height="18" rx="2.5"/><path d="M11 18h2"/>',T('Устройства','Devices'),T('Этот телефон','This device'))}${mi('power','#F07A22','<rect x="3" y="8" width="16" height="9" rx="2.5"/><path d="M21 11v3"/>',T('Энергосбережение','Power saving'),T('Меньше анимаций','Fewer animations'))}${mi('lang','#A257E6','<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.5 5.6 3.5 9S14.5 18.4 12 21c-2.5-2.6-3.5-5.6-3.5-9S9.5 5.6 12 3z"/>',T('Язык','Language'),st.lang==='en'?'English':'Русский')}${mi('groups','#2AA9E8',CXI.group,T('Группы и истории','Groups and stories'),T('Группы, каналы, закреплённые','Groups, channels, pinned'))}</div>
-  <div class="fr-tg mes-menu" style="margin-top:14px">${mi2('supOpen','#2F9BF5','<path d="M12 17v.01M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.7.4-1 1-1 1.7"/><circle cx="12" cy="12" r="9"/>',T('Задать вопрос','Ask a question'),T('Помощник Линтреса ответит','The Lintres helper answers'))}${mi2('supOpen','#F5A31A','<circle cx="12" cy="12" r="9"/><path d="M12 8v.01M12 11v5"/>',T('Вопросы о Линтресе','Lintres FAQ'),T('Ответы на частые вопросы','Answers to common questions'))}${mi2('newsOpen','#A257E6','<path d="M12 3l2.5 5.5L20 9.5l-4 4 1 5.8L12 16.5 7 19.3l1-5.8-4-4 5.5-1z"/>',T('Возможности Линтреса','Lintres features'),T('Новости и обновления','News and updates'))}<div class="mes-i"><b>Линтрес</b><span>v${APP_VER}</span></div></div>
+  <div class="fr-tg mes-menu" style="margin-top:14px">${mi2('supOpen','#2F9BF5','<path d="M12 17v.01M9.5 9a2.5 2.5 0 1 1 3.5 2.3c-.7.4-1 1-1 1.7"/><circle cx="12" cy="12" r="9"/>',T('Задать вопрос','Ask a question'),T('Помощник Линтреса ответит','The Lintres helper answers'))}${mi2('newsOpen','#A257E6','<path d="M12 3l2.5 5.5L20 9.5l-4 4 1 5.8L12 16.5 7 19.3l1-5.8-4-4 5.5-1z"/>',T('Возможности Линтреса','Lintres features'),T('Новости и обновления','News and updates'))}<div class="mes-i"><b>Линтрес</b><span>v${APP_VER}</span></div></div>
   ${meNav('settings')}</div>`;
 }
 const tgI=(col,p)=>`<i class="tg-i" style="background:${col}">${mmI(p)}</i>`;
@@ -13534,7 +13616,7 @@ function tgPrevHTML(){
 }
 function mesChat(){
   const st=S.settings,fs=+st.chFs||16,rr=st.chR==null?20:+st.chR,tm=st.themeMode||'light',dark=tm==='dark'||tm==='amoled';
-  const themes=[['light',T('Светлая','Light'),'#F2F2F6','#fff','#17171c'],['dark',T('Тёмная','Dark'),'#17171B','#2A2A30','#fff'],['amoled','AMOLED','#000','#1C1C1F','#fff'],['auto',T('Авто','Auto'),'linear-gradient(135deg,#F2F2F6 50%,#111 50%)','#8E8E96','#fff']];
+  const themes=[['light',T('Светлая','Light'),'#F2F2F6','#fff','#17171c'],['dark',T('Тёмная','Dark'),'#17171B','#2A2A30','#fff']];
   const tiles=themes.map(t=>`<button class="tg-th rp${tm===t[0]?' on':''}" data-act="meOpt" data-k="themeMode" data-v="${t[0]}" style="background:${t[2]}"><i style="background:${t[3]}"></i><i class="o" style="background:${t[4]}"></i><span>${t[1]}</span></button>`).join('');
   const lst=sGet('cmp');
   return tgC(T('Размер текста сообщений','Message text size'),tgSlider('chFsR',12,24,fs,'chFsV'))
@@ -13641,7 +13723,7 @@ function clSearchUI(q0){
   const fr=o.friends.filter(f=>(f.name||'').toLowerCase().includes(ql)||f.user.includes(ql)).slice(0,8);
   if(fr.length)out+=`<div class="sr-h">${T('Контакты и чаты','Contacts and chats')}</div><div class="sr-c">${fr.map(f=>`<button class="sr-r rp" data-act="chatOpen" data-u="${esc(f.user)}"><span class="mec-a" style="${avS(f.user)}">${avI(f.name,f.user)}</span><span class="mec-t"><b>${hl(f.name)}</b><small>@${hl(f.user)}</small></span></button>`).join('')}</div>`;
   const gr=Object.values(grO()).filter(g=>g.n.toLowerCase().includes(ql)).slice(0,6);
-  const sp=[['supOpen',T('Поддержка Линтрес','Lintres support'),'support help поддержка помощь'],['newsOpen','Workout',' workout news новости канал обновления']].filter(x=>(x[1]+' '+x[2]).toLowerCase().includes(ql));
+  const sp=[['supOpen',T('Поддержка Линтрес','Lintres support'),'support help поддержка помощь'],['newsOpen','Workout',' workout news новости канал обновления'],['savedOpen',T('Избранное','Saved messages'),'saved избранное заметки notes']].filter(x=>(x[1]+' '+x[2]).toLowerCase().includes(ql));
   if(gr.length||sp.length)out+=`<div class="sr-h">${T('Группы и каналы','Groups and channels')}</div><div class="sr-c">${gr.map(g=>`<button class="sr-r rp" data-act="grOpen" data-id="${esc(g.id)}"><span class="mec-a"><b class="gr-av ${g.k}" style="width:100%;height:100%">${mmI(g.k==='c'?CXI.chan:CXI.group)}</b></span><span class="mec-t"><b>${hl(g.n)}</b><small>${g.k==='c'?T('Канал','Channel'):T('Группа','Group')} · ${g.mem.length+1}</small></span></button>`).join('')}${sp.map(x=>`<button class="sr-r rp" data-act="${x[0]}"><span class="mec-a" style="background:var(--lmg);color:var(--lmi)">${x[0]==='supOpen'?mmI(CXI.help):'W'}</span><span class="mec-t"><b>${esc(x[1])}</b><small>${x[0]==='supOpen'?T('Помощь','Help'):T('Официальный канал','Official channel')}</small></span></button>`).join('')}</div>`;
   const ms=[];
   Object.entries(o.chats||{}).forEach(([u,l])=>l.forEach(m=>{if(m.k==='t'&&typeof m.x==='string'&&m.x.toLowerCase().includes(ql))ms.push({u,m,ts:m.ts})}));
@@ -13737,8 +13819,7 @@ async function dirFill(q,ql,empty,EMP){
   let h='';
   if(cs.length)h+=`<div class="sr-h">${T('Каналы','Channels')}</div><div class="sr-c">${cs.map(c=>`<div class="sr-r"><span class="mec-a"><b class="gr-av c" style="width:100%;height:100%">${mmI(CXI.chan)}</b></span><span class="mec-t"><b>${esc(c.n)}</b><small>@${esc(c.h)}${c.a?' · '+esc(c.a):''}</small></span><button class="btn rp sr-add" data-act="chSub" data-id="${esc(c.id)}">${G[c.id]?T('Открыть','Open'):T('Подписаться','Join')}</button></div>`).join('')}</div>`;
   const row=(u,nm)=>{const fr=o.friends.some(f=>f.user===u),rq=o.reqOut.some(r=>r.user===u);return `<div class="sr-r"><span class="mec-a" style="${avS(u)}">${avI(nm,u)}</span><span class="mec-t"><b>${esc(nm)}</b><small>@${esc(u)}${rq?' · '+T('заявка отправлена','request sent'):''}</small></span>${fr?`<button class="btn rp sr-add" data-act="chatOpen" data-u="${esc(u)}">${T('Написать','Message')}</button>`:rq?'':`<button class="btn rp sr-add" data-act="srAdd" data-u="${esc(u)}">${T('Добавить','Add')}</button>`}</div>`};
-  const shown=new Set(us.map(u=>u.user)),ex=/^[a-z0-9_.]{3,20}$/.test(ql)&&ql!==o.user&&!shown.has(ql)&&!o.friends.some(f=>f.user===ql)&&!D.c.some(c=>c.h===ql)?[row(ql,'@'+ql)]:[];
-  const ul=us.filter(u=>!o.friends.some(f=>f.user===u.user)).map(u=>row(u.user,u.name)).concat(ex);
+  const ul=us.filter(u=>!o.friends.some(f=>f.user===u.user)).map(u=>row(u.user,u.name));
   if(ul.length)h+=`<div class="sr-h">${T('Пользователи','People')}</div><div class="sr-c">${ul.join('')}</div>`;
   el2.innerHTML=h||(empty?EMP:'');
 }
@@ -13860,7 +13941,7 @@ Object.assign(ACT,{
   stnClose:()=>stnClose(),
   stnK:el=>{if(!STN)return;const k=el.dataset.k;if(k==='img'&&!STN.url){STN.k='img';stnPaint();const f=$('#stnFile');if(f)f.click();return}STN.k=k;stnPaint()},
   stnBg:el=>{if(!STN)return;STN.bg=+el.dataset.i||0;stnPaint()},
-  stnAud:el=>{if(!STN)return;STN.aud=el.dataset.k==='close'?'close':'all';if(STN.aud==='close'&&!stO().close.length)STN.pan='cl';stnPaint()},
+  stnAud:()=>{if(!STN)return;STN.aud='all';stnPaint()},
   stnPhoto:()=>{const f=$('#stnFile');if(f)f.click()},
   stnClOpen:()=>{if(!STN)return;STN.pan='cl';stnPaint()},
   stnClX:()=>{if(!STN)return;STN.pan='';stnPaint()},
@@ -13935,11 +14016,13 @@ function cvMsgs(){
   if(!CV)return [];
   if(CV.k==='sup')return supO().msgs;
   if(CV.k==='news')return newsO().msgs;
+  if(CV.k==='saved'){const o=soc(),q=(CV.q||'').toLowerCase();return o.saved.slice().sort((a,b)=>a.ts-b.ts).filter(m=>!q||String(m.x).toLowerCase().includes(q)).map(m=>({id:m.id,by:o.user,x:m.x||'',im:m.im,pin:m.pin,ed:m.ed,ts:m.ts}))}
   const g=grO()[CV.id];return g?g.msgs:[];
 }
 function cvListHTML(){
   const l=cvMsgs(),o=soc();let day='',out='';
   const g=CV.k==='grp'?grO()[CV.id]:null;
+  if(CV.k==='saved'&&!l.length)out+=`<p class="sm mut" style="text-align:center;margin:auto;padding:0 24px">${CV.q?T('Ничего не найдено','Nothing found'):T('Здесь твои заметки и ссылки. Видишь только ты.','Your notes and links live here. Only you can see them.')}</p>`;
   if(CV.k==='sup'&&!l.length)out+=`<p class="sm mut" style="text-align:center;margin:auto;padding:0 24px">${T('Задай вопрос про приложение, и я отвечу.','Ask a question about the app and I will answer.')}</p>`;
   l.forEach(m=>{
     const d=new Date(m.ts),k=d.toDateString();
@@ -13948,7 +14031,7 @@ function cvListHTML(){
     if(CV.k==='news'){out+=newsMsgHTML(m);return}
     const me=CV.k==='sup'?m.me:m.by===o.user,tm=d.toLocaleTimeString(loc(),{hour:'2-digit',minute:'2-digit'});
     const by=!me&&g&&g.k==='g'?`<b class="gr-by">${esc(frName(m.by))}</b>`:'';
-    out+=`<div class="ch-m ${me?'me':'th'}${m.f?' bad':''}">${by}<span>${esc(m.x)}</span>${m.tg?`<a class="sup-tg" href="${TG}" target="_blank" rel="noopener">${mmI(CXI.send)}${T('Написать разработчику','Message the developer')}</a>`:''}<small>${m.ed?'':''}${tm}${m.f?' · <b>'+T('не отправлено','not sent')+'</b>':''}</small></div>`;
+    out+=`<div class="ch-m ${me?'me':'th'}${m.f?' bad':''}"${CV.k==='saved'?` data-act="svMsg" data-id="${esc(m.id)}"`:''}>${by}${m.im?`<img class="sv-im" src="${m.im}" alt="">`:''}${m.x?`<span>${esc(m.x)}</span>`:''}${m.tg?`<button class="sup-tg rp" data-act="openDev">${mmI(CXI.send)}${T('Написать разработчику','Message the developer')}</button>`:''}<small>${CV.k==='saved'&&m.pin?`<i class="sv-pn">${mmI(CXI.pin)}</i>`:''}${CV.k==='saved'&&m.ed?T('изменено','edited')+' · ':''}${tm}${m.f?' · <b>'+T('не отправлено','not sent')+'</b>':''}</small></div>`;
   });
   if(cvTy)out+=`<div class="ch-ty" aria-label="${T('Печатает…','Typing…')}"><span><i></i><i></i><i></i></span></div>`;
   return out;
@@ -13962,12 +14045,14 @@ function cvPaint(stick){
 function cvHTML(){
   const o=soc();let ttl,sub,av;
   if(CV.k==='sup'){ttl=T('Поддержка Workout','Workout support');sub=T('отвечает мгновенно','answers instantly');av=`<span class="cx-av"><b class="sup-av">${mmI(CXI.help)}</b></span>`}
+  else if(CV.k==='saved'){ttl=T('Избранное','Saved messages');sub=T('Заметки только для тебя','Notes just for you');av=`<span class="cx-av"><b class="sv-av">${mmI('<path d="M6 3h12v18l-6-4-6 4z"/>')}</b></span>`}
   else if(CV.k==='news'){ttl='Workout';sub=T('Официальный канал','Official channel');av=`<span class="cx-av"><b class="nw-av">W</b></span>`}
   else{const g=grO()[CV.id];if(!g)return '';ttl=g.n;sub=g.k==='c'?T('Канал','Channel')+(g.pub?' · @'+g.h:' · '+(g.mem.length)+' '+T('подписчиков','subscribers')):T('Группа','Group')+' · '+(g.mem.length+1)+' '+T('участников','members');
     av=`<span class="cx-av"><b class="gr-av ${g.k}">${mmI(g.k==='c'?CXI.chan:CXI.group)}</b></span>`}
   const g=CV.k==='grp'?grO()[CV.id]:null,ro=g&&g.k==='c'&&g.own!==o.user;
-  const bar=CV.k==='news'?newsBar():ro?`<div class="gr-ro">${mmI(CXI.chan)}${T('В канале публикует только владелец','Only the owner posts in this channel')}</div>`:`<div class="ch-bar" id="cvBar"><div class="ch-field"><input id="cvIn" data-enter="cvSend" placeholder="${CV.k==='sup'?T('Ваш вопрос','Your question'):g&&g.k==='c'?T('Новая публикация','New post'):T('Сообщение','Message')}" maxlength="600" autocomplete="off" enterkeyhint="send"></div><button class="ib rp ch-send" data-act="cvSend" aria-label="${T('Отправить','Send')}">${ic('send')}</button></div>`;
-  return `<div class="lin chat"><div class="ch-top"><button class="ib rp" data-act="cvClose" aria-label="${T('Назад','Back')}">${ic('back')}</button><div class="ch-who">${av}<div style="min-width:0;flex:1"><b style="display:block;font-size:17px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(ttl)}</b><small class="mut" style="font-size:12.5px;font-weight:600">${sub}</small></div></div>${CV.k==='grp'?`<button class="ib rp" data-act="grInfo" aria-label="${T('О чате','Info')}">${mmI('<circle cx="12" cy="5.5" r="1.7" fill="currentColor"/><circle cx="12" cy="12" r="1.7" fill="currentColor"/><circle cx="12" cy="18.5" r="1.7" fill="currentColor"/>')}</button>`:''}</div>
+  const bar=CV.k==='news'?newsBar():ro?`<div class="gr-ro">${mmI(CXI.chan)}${T('В канале публикует только владелец','Only the owner posts in this channel')}</div>`:`<div class="ch-bar" id="cvBar"><div class="ch-field"><input id="cvIn" data-enter="cvSend" placeholder="${CV.k==='saved'?T('Новая заметка','New note'):CV.k==='sup'?T('Ваш вопрос','Your question'):g&&g.k==='c'?T('Новая публикация','New post'):T('Сообщение','Message')}" maxlength="600" autocomplete="off" enterkeyhint="send">${CV.k==='saved'?`<button class="ib rp sv-ph" data-act="svPhoto" aria-label="${T('Добавить фото','Add photo')}">${mmI('<rect x="3" y="5" width="18" height="14" rx="3"/><circle cx="9" cy="11" r="1.8"/><path d="M21 16l-5-5-8 8"/>')}</button><input type="file" id="svFile" accept="image/*" hidden>`:''}${CV.k==='saved'||CV.k==='sup'?`<button class="ib rp ch-send" data-act="cvSend" aria-label="${T('Отправить','Send')}">${ic('send')}</button>`:''}</div>${CV.k==='saved'||CV.k==='sup'?'':`<button class="ib rp ch-send" data-act="cvSend" aria-label="${T('Отправить','Send')}">${ic('send')}</button>`}</div>`;
+  return `<div class="lin chat"><div class="ch-top"><button class="ib rp" data-act="cvClose" aria-label="${T('Назад','Back')}">${ic('back')}</button><div class="ch-who">${av}<div style="min-width:0;flex:1"><b style="display:block;font-size:17px;font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${esc(ttl)}</b><small class="mut" style="font-size:12.5px;font-weight:600">${sub}</small></div></div>${CV.k==='saved'?`<div class="ch-acts"><button class="ib rp" data-act="svSearch" aria-label="${T('Поиск','Search')}">${mmI('<circle cx="11" cy="11" r="6.5"/><path d="M16 16l4.5 4.5"/>')}</button><button class="ib rp" data-act="svMenu" aria-label="${T('Меню','Menu')}">${mmI('<circle cx="12" cy="5.5" r="1.7" fill="currentColor"/><circle cx="12" cy="12" r="1.7" fill="currentColor"/><circle cx="12" cy="18.5" r="1.7" fill="currentColor"/>')}</button></div>`:''}${CV.k==='grp'?`<button class="ib rp" data-act="grInfo" aria-label="${T('О чате','Info')}">${mmI('<circle cx="12" cy="5.5" r="1.7" fill="currentColor"/><circle cx="12" cy="12" r="1.7" fill="currentColor"/><circle cx="12" cy="18.5" r="1.7" fill="currentColor"/>')}</button>`:''}</div>
+  ${CV.k==='saved'?`<div class="sv-sr" id="svSr" hidden><input id="svQ" data-in="svQ" type="search" placeholder="${T('Поиск по заметкам','Search notes')}" autocomplete="off"></div>`:''}
   <div class="ch-list" id="cvList">${cvListHTML()}</div>
   <div class="sup-q" id="cvQ"${CV.k==='sup'&&supO().msgs.length<3?'':' hidden'}>${CV.k==='sup'?SUPQ().map(q=>`<button class="rp" data-act="supAsk" data-q="${esc(q)}">${esc(q)}</button>`).join(''):''}</div>
   ${bar}</div>`;
@@ -13976,6 +14061,7 @@ function cvOpen(k,id){
   closeSheet();CV={k,id:id||''};
   if(k==='sup'){const s=supO();s.un=0;if(!s.msgs.length)s.msgs.push({id:rndId(8),me:0,ts:Date.now(),x:T('Привет! Я помощник Workout. Отвечаю на вопросы про приложение: тренировки, питание, языки, друзья, истории, группы, звонки, уведомления. Что тебя интересует?','Hi! I am the Workout assistant. I answer questions about the app: workouts, food, languages, friends, stories, groups, calls, notifications. What would you like to know?')})}
   else if(k==='news'){newsO().un=0}
+  else if(k==='saved'){CV.q=''}
   else{const g=grO()[id];if(!g){CV=null;return}g.un=0}
   save();navBadge();
   openLayer(cvHTML(),false,'cv');
@@ -14003,6 +14089,7 @@ async function grFlush(){
 function cvSend(){
   const i=$('#cvIn');if(!i||!CV)return;const x=i.value.trim().slice(0,600);if(!x)return;i.value='';
   if(CV.k==='sup'){supSend(x);return}
+  if(CV.k==='saved'){const o=soc();if(CV.ed){const m=o.saved.find(v=>v.id===CV.ed);CV.ed=null;if(m&&m.x!==x){m.x=x;m.ed=1}i.placeholder=T('Новая заметка','New note');save();cvPaint();return}o.saved.push({id:rndId(8),x,ts:Date.now()});save();cvPaint(true);return}
   const o=soc(),g=grO()[CV.id];if(!g)return;
   if(g.k==='c'&&g.own!==o.user)return;
   const m={id:rndId(12),by:o.user,x,ts:Date.now()};g.msgs.push(m);if(g.msgs.length>300)g.msgs.shift();g.ts=m.ts;save();cvPaint(true);
@@ -14135,9 +14222,9 @@ async function newsPoll(force){
 function newsMsgHTML(m){
   const d=new Date(m.ts),tm=d.toLocaleTimeString(loc(),{hour:'2-digit',minute:'2-digit'}),newer=m.ver&&verCmp(m.ver,APP_VER)>0,cur=m.ver&&verCmp(m.ver,APP_VER)===0;
   const link=m.url||TG;
-  return `<div class="ch-m th nw">${m.title?`<b class="nw-t">${esc(m.title)}</b>`:''}${newer?`<em class="nw-tag up">${T('Доступно обновление','Update available')} · ${esc(m.ver)}</em>`:cur?`<em class="nw-tag ok">${T('У тебя эта версия','You have this version')} · ${esc(m.ver)}</em>`:''}<span>${esc(m.x)}</span><a class="sup-tg" href="${esc(link)}" target="_blank" rel="noopener">${mmI(newer?CXI.out:CXI.send)}${newer?T('Скачать обновление','Download the update'):T('Канал Workout в Telegram','Workout on Telegram')}</a><small>${tm}</small></div>`;
+  return `<div class="ch-m th nw">${m.title?`<b class="nw-t">${esc(m.title)}</b>`:''}${newer?`<em class="nw-tag up">${T('Доступно обновление','Update available')} · ${esc(m.ver)}</em>`:cur?`<em class="nw-tag ok">${T('У тебя эта версия','You have this version')} · ${esc(m.ver)}</em>`:''}<span>${esc(m.x)}</span>${newer?`<a class="sup-tg" href="${esc(link)}" target="_blank" rel="noopener">${mmI(CXI.out)}${T('Скачать обновление','Download the update')}</a>`:''}<small>${tm}</small></div>`;
 }
-const newsBar=()=>`<a class="gr-ro nw-bar" href="${TG}" target="_blank" rel="noopener">${mmI(CXI.send)}${T('Канал Workout в Telegram: ','Workout on Telegram: ')}t.me/worcoutwww</a>`;
+const newsBar=()=>`<a class="nw-bar2" href="${TG}" target="_blank" rel="noopener">${mmI(CXI.send)}<span><b>${T('Открыть канал','Open the channel')}</b><small>t.me/worcoutwww</small></span></a>`;
 function nwComposeHTML(){
   return `<div class="grab"></div><h2 class="h2">${T('Новость в канал Workout','News for the Workout channel')}</h2><p class="sm mut" style="margin:6px 0 10px">${T('Сообщение подписывается твоим ключом разработчика и появится у всех, кто на версии 4.05 и новее. Сервер хранит его около 12 часов, поэтому у тех, кто не открывал приложение дольше, оно может не появиться.','The message is signed with your developer key and shows up for everyone on version 4.05 or newer. The relay keeps it about 12 hours, so people who did not open the app for longer may miss it.')}</p>
   <input id="nwV" placeholder="${T('Версия обновления, например 4.06 (необязательно)','Update version, e.g. 4.06 (optional)')}" maxlength="12" autocapitalize="none" style="margin-bottom:8px"><input id="nwT" placeholder="${T('Заголовок','Title')}" maxlength="80" style="margin-bottom:8px"><textarea id="nwX" rows="6" maxlength="1500" placeholder="${T('Что нового в обновлении…','What is new…')}" style="margin-bottom:8px"></textarea><input id="nwU" placeholder="${T('Ссылка (по умолчанию Telegram-канал)','Link (Telegram channel by default)')}" maxlength="200" autocapitalize="none" style="margin-bottom:12px">
@@ -14156,6 +14243,7 @@ async function nwSend(){
 }
 Object.assign(ACT,{
   newsOpen:()=>cvOpen('news'),
+  savedOpen:()=>cvOpen('saved'),
   newsCompose:()=>openSheet(nwComposeHTML()),
   nwSend:()=>nwSend()
 });
@@ -14181,7 +14269,7 @@ Object.assign(ACT,{
   gcGo:()=>{if(GCR){GCR.n=(($('#gcN')||{}).value||'');gcCreate()}},
   csOpen:()=>openSheet(csHTML()),
   cxNav:el=>meGo(el.dataset.k),
-  mesSub:el=>{ME.sub=el.dataset.k;meRe();$('#layer').scrollTop=0},
+  mesSub:el=>{if(el.dataset.k==='saved'){cvOpen('saved');return}ME.sub=el.dataset.k;meRe();$('#layer').scrollTop=0},
   mePhSheet:()=>openSheet(`<div class="shx"><div class="grab"></div><div class="shx-h"><span class="shx-ic">${mmI('<path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/>')}</span><h2 class="shx-t">${T('Телефон','Phone')}</h2></div><div class="shx-in"><input id="mePh2" type="tel" value="${esc(S.phone||'')}" placeholder="+374 00 000000" maxlength="24" data-enter="mePhSave"></div><div class="shx-btns r"><button class="btn ghost rp" data-act="closeSheet">${T('Отмена','Cancel')}</button><button class="btn rp" data-act="mePhSave">${T('Сохранить','Save')}</button></div></div>`),
   mePhSave:()=>{S.phone=($('#mePh2').value||'').trim().slice(0,24);save();closeSheet();meRe()},
   meBdSheet:()=>openSheet(`<div class="shx"><div class="grab"></div><div class="shx-h"><span class="shx-ic">${mmI('<path d="M5 20h14v-6H5zM8 14v-2h8v2M12 8v4"/>')}</span><h2 class="shx-t">${T('День рождения','Birthday')}</h2></div><div class="shx-in"><input id="meBd2" type="date" value="${esc(S.bday||'')}"></div><div class="shx-btns r"><button class="btn ghost rp" data-act="meBdClear">${T('Убрать','Clear')}</button><button class="btn rp" data-act="meBdSave">${T('Сохранить','Save')}</button></div></div>`),
@@ -14196,7 +14284,22 @@ Object.assign(ACT,{
   meNone:()=>{},
   mdDl:el=>{const o=soc(),l=o.chats[chatU]||[],m=l.find(x=>x.id===el.dataset.id);if(!m)return;m.man=1;fetchMedia(m,chatU);toast(T('Скачиваю…','Downloading…'));chatRender()},
   svAdd:()=>{const i=$('#svIn');const x=i&&i.value.trim().slice(0,1000);if(!x)return;const o=soc();o.saved.push({id:rndId(8),x,ts:Date.now()});save();meRe();setTimeout(()=>{const j=$('#svIn');if(j)j.focus()},50)},
-  svDel:el=>{const o=soc();o.saved=o.saved.filter(m=>m.id!==el.dataset.id);save();meRe()},
+  svMsg:el=>{if(!CV||CV.k!=='saved')return;const m=soc().saved.find(v=>v.id===el.dataset.id);if(!m)return;SVM=m.id;
+    const it=(a,p,t,cls)=>`<button class="co-it rp${cls?' dn':''}" data-act="${a}"><i class="co-ic">${mmI(p)}</i><span class="co-tx"><b>${t}</b></span></button>`;
+    openSheet(`<div class="grab"></div><div class="co-grp">${m.x?it('svEdit',CXI.edit,T('Изменить','Edit')):''}${m.x?it('svCopy','<rect x="8" y="8" width="12" height="12" rx="3"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/>',T('Копировать текст','Copy text')):''}${it('svFwd','<path d="M15 4l5 5-5 5M20 9H9a5 5 0 0 0-5 5v5"/>',T('Переслать','Forward'))}${it('svPin',CXI.pin,m.pin?T('Открепить','Unpin'):T('Закрепить','Pin'))}${it('svDelM',CXI.trash,T('Удалить','Delete'),1)}</div>`,1)},
+  svEdit:()=>{const m=soc().saved.find(v=>v.id===SVM);closeSheet();if(!m||!CV)return;CV.ed=m.id;const i=$('#cvIn');if(i){i.value=m.x||'';i.placeholder=T('Изменение заметки','Editing note');setTimeout(()=>{i.focus()},80)}},
+  svCopy:()=>{const m=soc().saved.find(v=>v.id===SVM);closeSheet();if(m&&m.x)copyTxt(m.x)},
+  svPin:()=>{const m=soc().saved.find(v=>v.id===SVM);closeSheet();if(m){m.pin=m.pin?0:1;save();cvPaint();toast(m.pin?T('Закреплено','Pinned'):T('Откреплено','Unpinned'))}},
+  svDelM:()=>{const id=SVM;closeSheet();const o=soc();o.saved=o.saved.filter(v=>v.id!==id);save();if(CV&&CV.k==='saved')cvPaint()},
+  svFwd:()=>{const o=soc();if(!o.friends.length){closeSheet();toast(T('Сначала добавь друзей','Add friends first'));return}openSheet(`<div class="grab"></div><div class="at-h"><b>${T('Переслать','Forward')}</b></div><div class="stack" style="gap:8px">${o.friends.map(f=>`<button class="cl-row rp" data-act="svFwdTo" data-u="${esc(f.user)}"><span class="cl-av"><b>${esc((f.name||'?')[0].toUpperCase())}</b></span><span class="cl-tx"><span class="cl-n">${esc(f.name)}</span><span class="cl-p">@${esc(f.user)}</span></span></button>`).join('')}</div>`,1)},
+  svFwdTo:async el=>{const m=soc().saved.find(v=>v.id===SVM),u=el.dataset.u;closeSheet();if(!m)return;
+    const nm={id:rndId(12),me:1,k:'t',ts:Date.now(),st:'p'};
+    if(m.im){try{const b=await (await fetch(m.im)).blob();nm.k='img';nm.d=0;await MDB.put(nm.id,b);MU.set(nm.id,URL.createObjectURL(b))}catch(e){toast(T('Не удалось переслать фото','Could not forward the photo'));return}}else nm.x=m.x;
+    chatPush(u,nm);if(chatU===u)chatRender(true);chatPost(u,nm);toast(T('Переслано','Forwarded'))},
+  svDel:el=>{const o=soc();o.saved=o.saved.filter(m=>m.id!==el.dataset.id);save();if(CV&&CV.k==='saved')cvPaint();else meRe()},
+  svSearch:()=>{const r=$('#svSr');if(!r)return;r.hidden=!r.hidden;if(!r.hidden){const i=$('#svQ');if(i){i.value=CV.q||'';i.focus()}}else{CV.q='';cvPaint()}},
+  svMenu:()=>openSheet(`<div class="grab"></div><div class="co-grp"><button class="co-it rp dn" data-act="svClear"><i class="co-ic">${mmI('<path d="M5 7h14M10 7V5h4v2M7 7l1 12h8l1-12"/>')}</i><span class="co-tx"><b>${T('Очистить историю','Clear history')}</b><small>${T('Все заметки пропадут','All notes will be removed')}</small></span></button></div>`,1),
+  svClear:()=>{soc().saved=[];save();closeSheet();if(CV&&CV.k==='saved')cvPaint();toast(T('История очищена','History cleared'))},
   meBlockPick:()=>{const o=soc(),l=o.friends.filter(f=>!o.block.includes(f.user));openSheet(`<div class="grab"></div><h2 class="h2">${T('Заблокировать','Block')}</h2><div class="stv-list" style="max-height:50vh;overflow-y:auto;margin-top:10px">${l.map(f=>`<button class="stv-r pick" data-act="meBlock" data-u="${esc(f.user)}"><span class="stv-rav" style="${avS(f.user)}">${avI(f.name,f.user)}</span><span class="stv-rt"><b>${esc(f.name)}</b><small>@${esc(f.user)}</small></span></button>`).join('')||`<p class="stv-empty">${T('Нет друзей для блокировки','No friends to block')}</p>`}</div>`)},
   meBlock:el=>{const o=soc(),u=el.dataset.u;if(!o.block.includes(u))o.block.push(u);o.reqIn=o.reqIn.filter(r=>r.user!==u);save();closeSheet();meRe();toast(T('Заблокирован','Blocked'))},
   meUnblock:el=>{const o=soc();o.block=o.block.filter(u=>u!==el.dataset.u);save();meRe()},
@@ -14229,7 +14332,7 @@ Object.assign(ACT,{
   meE2E:()=>openSheet(`<div class="shx"><div class="grab"></div><div class="shx-h"><span class="shx-ic">${mmI('<rect x="5" y="11" width="14" height="10" rx="3"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/>')}</span><h2 class="shx-t">${T('Шифрование','Encryption')}</h2></div><p class="shx-s">${T('Личные сообщения, фото, голосовые, звонки и истории защищены сквозным шифрованием. Код безопасности можно сверить в профиле друга.','Messages, photos, voice, calls and stories are end-to-end encrypted. You can compare the safety code in a friend\'s profile.')}</p><div class="shx-btns"><button class="btn rp" data-act="closeSheet">OK</button></div></div>`),
   mePhoto:()=>$('#fAva').click(),
   csTog:el=>{const k=el.dataset.k,sc=$('#sheet').scrollTop;ACT.privSet({dataset:{k}});openSheet(csHTML());$('#sheet').scrollTop=sc},
-  csAud:()=>{S.settings.stAud=S.settings.stAud==='close'?'all':'close';save();const sc=$('#sheet').scrollTop;openSheet(csHTML());$('#sheet').scrollTop=sc},
+  csAud:()=>{S.settings.stAud='all';save();const sc=$('#sheet').scrollTop;openSheet(csHTML());$('#sheet').scrollTop=sc},
   csClose:()=>{const o=soc(),s=stO();openSheet(csSub(T('Близкие друзья','Close friends'),`<p class="sm mut" style="margin:6px 0 0">${T('Истории «для близких» увидят только они.','Close-friends stories are seen only by them.')}</p><div class="stv-list" style="max-height:56vh;overflow-y:auto;margin-top:8px">${o.friends.map(f=>`<button class="stv-r pick${s.close.includes(f.user)?' on':''}" data-act="stnClT" data-u="${esc(f.user)}" aria-pressed="${s.close.includes(f.user)}"><span class="stv-rav" style="${avS(f.user)}">${avI(f.name,f.user)}</span><span class="stv-rt"><b>${esc(f.name)}</b><small>@${esc(f.user)}</small></span><i class="stv-ck">${mmI(CXI.ck)}</i></button>`).join('')||`<p class="stv-empty">${T('Пока нет друзей','No friends yet')}</p>`}</div>`))},
   csMuted:()=>openSheet(csSub(T('Без звука','Muted chats'),csList(soc().mute,'mute',T('Нет чатов без звука','No muted chats'),'csUnmute'))),
   csPinned:()=>openSheet(csSub(T('Закреплённые','Pinned chats'),csList(soc().cpin,'pin',T('Нет закреплённых чатов','No pinned chats'),'csUnpin'))),
@@ -14362,7 +14465,7 @@ const N=Math.round(Math.min(90,Math.max(50,W/5)));const fl=[];
 const mk=(top)=>({x:Math.random()*W,y:top?-10-Math.random()*H*.2:Math.random()*H,k:Math.random()<.5?0:Math.random()<.6?1:2,v:.5+Math.random()*1.1,p:Math.random()*6.3,s:.4+Math.random()*.8});
 for(let i=0;i<N;i++)fl.push(mk(0));
 const CW=4;let hm=[],hx0=0,hn=0,HMAX=22,nz=[],lastR=null,pk=[];
-function nav(){const n=document.getElementById('nav');if(!n)return null;const L=document.getElementById('layer');if(L&&L.classList.contains('on'))return null;const sh=document.getElementById('sheet'),sc=document.getElementById('scrim');if((sh&&sh.classList.contains('on'))||(sc&&sc.classList.contains('on')))return null;const r=n.getBoundingClientRect();if(r.width<50||r.height<20)return null;return r}
+function nav(){const n=document.getElementById('nav');if(!n)return null;const L=document.getElementById('layer');if(L&&L.classList.contains('on'))return null;const sh=document.getElementById('sheet'),sc=document.getElementById('scrim');if((sh&&sh.classList.contains('on'))||(sc&&sc.classList.contains('on')))return null;const r=n.getBoundingClientRect();if(r.width<50||r.height<20)return null;if(r.bottom<=0||r.top>=innerHeight)return null;try{const e=document.elementFromPoint(r.left+r.width/2,r.top+r.height/2);if(!e||!(n===e||n.contains(e)))return null}catch(_){}return r}
 let t=0,last=0,smoothT=0;
 function frame(ts){requestAnimationFrame(frame);if(document.hidden)return;const on=(typeof snowOn==='function')?snowOn():true;if(!on){if(cv.style.display!=='none'){cv.style.display='none';cx.setTransform(1,0,0,1,0,0);cx.clearRect(0,0,cv.width,cv.height)}last=ts;return}if(cv.style.display==='none')cv.style.display='';const dt=Math.min(2,(ts-last)/16.7||1);last=ts;t+=dt*.02;
 cx.setTransform(dpr,0,0,dpr,0,0);cx.clearRect(0,0,W,H);
