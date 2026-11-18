@@ -2754,7 +2754,7 @@ const RM_SYS=!!(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)'
 const CHECK='<svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
 
 /* ========= data ========= */
-const LS='workout_app_v1',APP_VER='4.06';
+const LS='workout_app_v1',APP_VER='4.07';
 function def(){return{
   onboarded:false,name:'',avatar:'',weight:70,
   settings:{theme:'light',accent:'flame',lang:'ru',sound:true,vib:true,units:'kg',kcal:2200,rest:60,remind:false,
@@ -12001,7 +12001,7 @@ function copyTxt(t){
   const fb=()=>{const ta=document.createElement('textarea');ta.value=t;ta.style.cssText='position:fixed;opacity:0;top:0';document.body.appendChild(ta);ta.select();try{document.execCommand('copy');ok()}catch(e){toast(t)}ta.remove()};
   try{navigator.clipboard.writeText(t).then(ok).catch(fb)}catch(e){fb()}
 }
-var RLE='',RLB=0;const LINTRES_DOWN=(()=>{try{return !JSON.parse(localStorage.getItem('workout_admin')||'null').s}catch(e){return true}})();
+var RLE='',RLB=0;const LINTRES_DOWN=false;
 function RPR(){return '<span style="display:inline-flex;align-items:center;height:30px;padding:0 12px;border-radius:15px;background:color-mix(in srgb,var(--a1) 14%,transparent);color:var(--a1);font-size:12px;font-weight:800;white-space:nowrap">🛠 '+T('На ремонте','Under repair')+'</span>'}
 function relayPost(topic,obj){if(LINTRES_DOWN)return Promise.resolve(false);return fetch(RELAY+topic,{method:'POST',body:JSON.stringify(obj)}).then(r=>{if(!r.ok){RLE='HTTP '+r.status;if(r.status===429)RLB=Date.now()+45000}return r.ok}).catch(e=>{RLE='network: '+(e&&e.message||'');return false})}
 function relayGet(topic,since){
